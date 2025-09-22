@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Contact</title>
+
+    <!-- Fira Code desde Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Configurar Tailwind para Fira Code -->
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Fira Code"', "monospace"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-gray-100 flex flex-col min-h-screen font-fira-code dark:bg-gray-900 dark:text-white"
+  >
+    <!-- Header / Nav -->
+    <header
+      class="w-full bg-zinc-200 shadow-xl/20 p-4 flex items-center justify-between dark:bg-zinc-800"
+    >
+      <!-- Logo -->
+      <a href="index.html">
+        <img src="img/logo_asd-removebg-preview.png" alt="logo" class="h-12" />
+      </a>
+
+      <!-- Contenedor derecho: links + sol -->
+      <div class="flex items-center gap-6">
+        <nav class="hidden md:flex">
+          <ul class="flex gap-8 text-lg font-semibold font-fira-code">
+            <li>
+              <a href="about.html" class="hover:text-blue-500">About me</a>
+            </li>
+            <li>
+              <a href="projects.html" class="hover:text-blue-500">Projects</a>
+            </li>
+            <li>
+              <a href="contact.html" class="hover:text-blue-500">Contact me</a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Icono sol -->
+        <svg
+          id="icono-tema"
+          width="32"
+          height="32"
+          stroke="black"
+          class="cursor-pointer dark:stroke-white"
+        >
+          <use href="assets/sprites.svg#sun"></use>
+        </svg>
+
+        <!-- boton de menu -->
+        <svg
+          id="btn-nav"
+          width="32"
+          height="32"
+          class="cursor-pointer md:hidden dark:fill-white"
+        >
+          <use href="assets/sprites.svg#icono-nav"></use>
+        </svg>
+      </div>
+    </header>
+
+    <!-- Menu desplegable -->
+    <div
+      id="mobile-menu"
+      class="hidden flex-col items-center bg-zinc-200 dark:bg-zinc-800 text-lg font-semibold font-fira-code p-4 space-y-4 md:hidden"
+    >
+      <a href="about.html" class="hover:text-blue-500 block w-full text-center">
+        About me
+      </a>
+      <a
+        href="projects.html"
+        class="hover:text-blue-500 block w-full text-center"
+      >
+        Projects
+      </a>
+      <a
+        href="contact.html"
+        class="hover:text-blue-500 block w-full text-center"
+      >
+        Contact me
+      </a>
+    </div>
+
+    <!-- Main -->
+    <main class="flex flex-col items-center justify-center flex-1 px-6 py-12">
+      <!-- Título + Imagen -->
+      <div class="flex items-center justify-center gap-8 mb-8">
+        <h1 class="text-4xl md:text-5xl font-bold text-center text-blue-600 dark:text-blue-400">
+          Contact me
+        </h1>
+
+        <!-- Imagen solo en pantallas medianas o mayores -->
+        <img
+          src="img/avatar-celular.png"
+          alt="avatar"
+          class="hidden md:block w-64 lg:w-72 flex-shrink-0"
+        />
+      </div>
+
+      <!-- Texto -->
+      <div class="text-center max-w-2xl mb-10">
+        <p class="text-lg md:text-xl text-gray-800 leading-relaxed dark:text-gray-300">
+          If you’d like to collaborate, have any questions, or just want to say hi,
+          feel free to reach out! <br />
+          You can email me at:
+          <a
+            href="mailto:andresalattino@gmail.com"
+            class="text-blue-600 dark:text-blue-400 font-medium hover:underline"
+          >
+            andresalattino@gmail.com
+          </a>
+          <br />
+          I’ll be happy to connect and chat about tech, projects, or new opportunities.
+        </p>
+      </div>
+
+      <!-- Íconos sociales -->
+      <div class="flex gap-6">
+        <a
+          href="https://github.com/andressalattino"
+          target="_blank"
+          class="text-gray-700 hover:text-black dark:text-gray-300 dark:hover:text-blue-500"
+        >
+          <svg width="36" height="36" fill="currentColor" class="cursor-pointer">
+            <use href="assets/sprites.svg#github"></use>
+          </svg>
+        </a>
+
+        <a
+          href="https://www.instagram.com/andres_salattino/"
+          target="_blank"
+          class="text-gray-700 hover:text-pink-500 dark:text-gray-300 dark:hover:text-pink-400"
+        >
+          <svg width="36" height="36" fill="currentColor" class="cursor-pointer">
+            <use href="assets/sprites.svg#instagram"></use>
+          </svg>
+        </a>
+      </div>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio-Home</title>
+
+    <!-- Fira Code desde Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Configurar Tailwind para Fira Code -->
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Fira Code"', "monospace"], // ahora font-sans = Fira Code
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-gray-100 flex flex-col min-h-screen font-fira-code dark:bg-gray-900 dark:text-white"
+  >
+    <!-- Header / Nav -->
+    <header
+      class="w-full bg-zinc-200 shadow-xl/20 p-4 flex items-center justify-between dark:bg-zinc-800"
+    >
+      <!-- Logo -->
+      <a href="index.html">
+        <img src="img/logo_asd-removebg-preview.png" alt="logo" class="h-12" />
+      </a>
+
+      <!-- Contenedor derecho: links + sol -->
+      <div class="flex items-center gap-6">
+        <nav class="hidden md:flex">
+          <ul class="flex gap-8 text-lg font-semibold font-fira-code">
+            <li>
+              <a href="about.html" class="hover:text-blue-500">About me</a>
+            </li>
+            <li>
+              <a href="projects.html" class="hover:text-blue-500">Projects</a>
+            </li>
+            <li>
+              <a href="contact.html" class="hover:text-blue-500">Contact me</a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Icono sol -->
+        <svg
+          id="icono-tema"
+          width="32"
+          height="32"
+          stroke="black"
+          class="cursor-pointer"
+        >
+          <use href="assets/sprites.svg#sun"></use>
+        </svg>
+        <!-- boton de menu  -->
+        <svg
+          id="btn-nav"
+          width="32"
+          height="32"
+          class="cursor-pointer md:hidden"
+        >
+          <use href="assets/sprites.svg#icono-nav"></use>
+        </svg>
+      </div>
+    </header>
+    <!-- Menu despleglable  -->
+    <div
+      id="mobile-menu"
+      class="hidden flex-col items-center bg-zinc-200 dark:bg-zinc-800 text-lg font-semibold font-fira-code p-4 space-y-4 md:hidden"
+    >
+      <a href="about.html" class="hover:text-blue-500 block w-full text-center">
+        About me
+      </a>
+      <a
+        href="projects.html"
+        class="hover:text-blue-500 block w-full text-center"
+      >
+        Projects
+      </a>
+      <a
+        href="contact.html"
+        class="hover:text-blue-500 block w-full text-center"
+      >
+        Contact me
+      </a>
+    </div>
+    <!-- Main content -->
+    <main
+      class="flex flex-col md:flex-row items-center md:items-start justify-start flex-1 gap-12 mt-36 px-6"
+    >
+      <!-- Texto -->
+      <div class="max-w-xl text-center md:text-left">
+        <h1
+          class="text-5xl text-blue-600 mb-4 font-bold text-shadow-md font-fira-code"
+        >
+          Andres Salattino
+        </h1>
+        <h2
+          id="subtitulo-index"
+          class="text-2xl font-fira-code text-gray-700 mb-8 dark:text-gray-300"
+        ></h2>
+      </div>
+
+      <!-- Imagen (tamaño fijo, no se achica nunca, desaparece en cel) -->
+      <div class="hidden md:block flex-shrink-0">
+        <img
+          src="img/avatar-pc.png"
+          class="w-80"
+          alt="avatar sentado en la computadora"
+        />
+      </div>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
