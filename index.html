@@ -98,33 +98,36 @@
         Contact me
       </a>
     </div>
-    <!-- Main content -->
-    <main
-      class="flex flex-col md:flex-row items-center md:items-start justify-start flex-1 gap-12 mt-36 px-6"
-    >
-      <!-- Texto -->
-      <div class="max-w-xl text-center md:text-left">
-        <h1
-          class="text-5xl text-blue-600 mb-4 font-bold text-shadow-md font-fira-code"
-        >
-          Andres Salattino
-        </h1>
-        <h2
-          id="subtitulo-index"
-          class="text-2xl font-fira-code text-gray-700 mb-8 dark:text-gray-300"
-        ></h2>
-      </div>
+    <!-- Main content centrado -->
+    <div class="flex-1 flex items-center justify-center">
+      <main
+        class="flex flex-col md:flex-row items-center justify-center flex-1 gap-12 px-6"
+      >
+        <!-- Texto -->
+        <div class="max-w-xl text-center md:text-left">
+          <h1
+            class="text-5xl text-blue-600 mb-4 font-bold text-shadow-md font-fira-code"
+          >
+            Andres Salattino
+          </h1>
+          <h2
+            id="subtitulo-index"
+            class="text-2xl font-fira-code text-gray-700 mb-8 dark:text-gray-300"
+          >
+            <!-- Aquí tu subtítulo -->
+          </h2>
+        </div>
 
-      <!-- Imagen (tamaño fijo, no se achica nunca, desaparece en cel) -->
-      <div class="hidden md:block flex-shrink-0">
-        <img
-          src="img/avatar-pc.png"
-          class="w-80"
-          alt="avatar sentado en la computadora"
-        />
-      </div>
-    </main>
-
+        <!-- Imagen (tamaño fijo, no se achica nunca, desaparece en cel) -->
+        <div class="hidden md:block flex-shrink-0">
+          <img
+            src="img/avatar-pc.png"
+            class="w-80"
+            alt="avatar sentado en la computadora"
+          />
+        </div>
+      </main>
+    </div>
     <script src="app.js"></script>
   </body>
 </html>
