@@ -32,7 +32,7 @@
     class="bg-gray-100 flex flex-col min-h-screen font-fira-code dark:bg-gray-900 dark:text-white"
   >
     <!-- Header / Nav -->
-    <header
+     <header
       class="w-full bg-zinc-200 shadow-xl/20 p-4 flex items-center justify-between dark:bg-zinc-800"
     >
       <!-- Logo -->
@@ -53,6 +53,9 @@
             <li>
               <a href="contact.html" class="hover:text-blue-500">Contact me</a>
             </li>
+             <li>
+              <a href="education.html" class="hover:text-blue-500">Education</a>
+            </li>
           </ul>
         </nav>
 
@@ -62,22 +65,24 @@
           width="32"
           height="32"
           stroke="black"
-          class="cursor-pointer"
+          class="cursor-pointer dark:stroke-white"
         >
           <use href="assets/sprites.svg#sun"></use>
         </svg>
-        <!-- boton de menu  -->
+
+        <!-- boton de menu -->
         <svg
           id="btn-nav"
           width="32"
           height="32"
-          class="cursor-pointer md:hidden"
+          class="cursor-pointer md:hidden dark:fill-white"
         >
           <use href="assets/sprites.svg#icono-nav"></use>
         </svg>
       </div>
     </header>
-    <!-- Menu despleglable  -->
+
+    <!-- Menu desplegable -->
     <div
       id="mobile-menu"
       class="hidden flex-col items-center bg-zinc-200 dark:bg-zinc-800 text-lg font-semibold font-fira-code p-4 space-y-4 md:hidden"
@@ -96,6 +101,12 @@
         class="hover:text-blue-500 block w-full text-center"
       >
         Contact me
+      </a>
+      <a
+        href="education.html"
+        class="hover:text-blue-500 block w-full text-center"
+      >
+        Education
       </a>
     </div>
     <div class="flex-1 flex items-center justify-center">

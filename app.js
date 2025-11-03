@@ -77,3 +77,21 @@ if (document.getElementById("carousel")) {
     updateCarousel();
   });
 }
+// --- Carrusel automático en education.html ---
+if (document.getElementById("skills-carousel")) {
+  const carousel = document.getElementById("skills-carousel");
+  const slides = carousel.children;
+  const totalSlides = slides.length;
+  let index = 0;
+
+  function updateCarousel() {
+    carousel.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  // 🔁 Movimiento automático cada 3 segundos
+  setInterval(() => {
+    index = (index + 1) % totalSlides;
+    updateCarousel();
+  }, 3000);
+}
+

@@ -32,7 +32,7 @@
     class="bg-gray-100 flex flex-col min-h-screen font-fira-code dark:bg-gray-900 dark:text-white"
   >
     <!-- Header / Nav -->
-    <header
+     <header
       class="w-full bg-zinc-200 shadow-xl/20 p-4 flex items-center justify-between dark:bg-zinc-800"
     >
       <!-- Logo -->
@@ -44,9 +44,18 @@
       <div class="flex items-center gap-6">
         <nav class="hidden md:flex">
           <ul class="flex gap-8 text-lg font-semibold font-fira-code">
-            <li><a href="about.html" class="hover:text-blue-500">About me</a></li>
-            <li><a href="projects.html" class="hover:text-blue-500">Projects</a></li>
-            <li><a href="contact.html" class="hover:text-blue-500">Contact me</a></li>
+            <li>
+              <a href="about.html" class="hover:text-blue-500">About me</a>
+            </li>
+            <li>
+              <a href="projects.html" class="hover:text-blue-500">Projects</a>
+            </li>
+            <li>
+              <a href="contact.html" class="hover:text-blue-500">Contact me</a>
+            </li>
+             <li>
+              <a href="education.html" class="hover:text-blue-500">Education</a>
+            </li>
           </ul>
         </nav>
 
@@ -56,16 +65,17 @@
           width="32"
           height="32"
           stroke="black"
-          class="cursor-pointer"
+          class="cursor-pointer dark:stroke-white"
         >
           <use href="assets/sprites.svg#sun"></use>
         </svg>
+
         <!-- boton de menu -->
         <svg
           id="btn-nav"
           width="32"
           height="32"
-          class="cursor-pointer md:hidden"
+          class="cursor-pointer md:hidden dark:fill-white"
         >
           <use href="assets/sprites.svg#icono-nav"></use>
         </svg>
@@ -77,11 +87,28 @@
       id="mobile-menu"
       class="hidden flex-col items-center bg-zinc-200 dark:bg-zinc-800 text-lg font-semibold font-fira-code p-4 space-y-4 md:hidden"
     >
-      <a href="about.html" class="hover:text-blue-500 block w-full text-center">About me</a>
-      <a href="projects.html" class="hover:text-blue-500 block w-full text-center">Projects</a>
-      <a href="contact.html" class="hover:text-blue-500 block w-full text-center">Contact me</a>
+      <a href="about.html" class="hover:text-blue-500 block w-full text-center">
+        About me
+      </a>
+      <a
+        href="projects.html"
+        class="hover:text-blue-500 block w-full text-center"
+      >
+        Projects
+      </a>
+      <a
+        href="contact.html"
+        class="hover:text-blue-500 block w-full text-center"
+      >
+        Contact me
+      </a>
+      <a
+        href="education.html"
+        class="hover:text-blue-500 block w-full text-center"
+      >
+        Education
+      </a>
     </div>
-
     <!-- Main content centrado -->
     <div class="flex-1 flex items-center justify-center">
       <main class="px-6 py-12">
@@ -95,16 +122,16 @@
           <!-- Tarjeta -->
           <div class="border rounded-xl p-5 bg-white shadow-md dark:bg-zinc-800 dark:border-zinc-700">
             <div class="flex items-start justify-between mb-3">
-              <h2 class="text-lg font-bold">Futuro Proyecto</h2>
+              <h2 class="text-lg font-bold">Rinos Web</h2>
               <div class="flex gap-2">
                 <!-- Link externo -->
-                <a href="#" target="_blank">
+                <a href="https://rino-web-nine.vercel.app/" target="_blank">
                   <svg width="20" height="20" fill="currentColor" class="text-blue-400 hover:text-blue-600">
                     <use href="assets/sprites.svg#rocket"></use>
                   </svg>
                 </a>
                 <!-- GitHub -->
-                <a href="#" target="_blank">
+                <a href="https://github.com/andressalattino/RinoWeb" target="_blank">
                   <svg width="20" height="20" fill="currentColor" class="text-blue-400 hover:text-blue-600">
                     <use href="assets/sprites.svg#github"></use>
                   </svg>
@@ -112,13 +139,14 @@
               </div>
             </div>
             <p class="text-sm text-gray-600 dark:text-gray-300 mb-4">
-              Informacion del proyecto
+            “Rino Web” es una página de turismo desarrollada y desplegada en Vercel. Ofrece una experiencia visual moderna y responsiva para explorar destinos, paquetes y servicios turísticos. Su diseño está orientado a la facilidad de uso,
+             el rendimiento y la presentación atractiva de la información para inspirar y facilitar la planificación de viajes
             </p>
             <!-- Badges -->
             <div class="flex flex-wrap gap-2">
-              <span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">Remix</span>
-              <span class="bg-gray-800 text-white text-xs px-3 py-1 rounded-full">Cloudflare</span>
-              <span class="bg-indigo-500 text-white text-xs px-3 py-1 rounded-full">KV</span>
+              <span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">Tailwind</span>
+              <span class="bg-gray-800 text-white text-xs px-3 py-1 rounded-full">HTML</span>
+              <span class="bg-indigo-500 text-white text-xs px-3 py-1 rounded-full">JS</span>
             </div>
           </div>
  <div class="border rounded-xl p-5 bg-white shadow-md dark:bg-zinc-800 dark:border-zinc-700">
