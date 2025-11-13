@@ -1,4 +1,4 @@
-// Animación typewriter SOLO en index.html
+// Animación typewriter 
 if (document.getElementById("subtitulo-index")) {
   const texto =
     "FrontEnd Developer, creating responsive and easy-to-use web interfaces with attention to detail🚀";
@@ -55,7 +55,7 @@ if (menuBtn) {
   });
 }
 
-// --- Carrusel SOLO en projects.html ---
+// --- Carrusel ---
 if (document.getElementById("carousel")) {
   const carousel = document.querySelector("#carousel > div");
   const nextBtn = document.getElementById("next");
@@ -77,7 +77,7 @@ if (document.getElementById("carousel")) {
     updateCarousel();
   });
 }
-// --- Carrusel automático en education.html ---
+// --- Carrusel 
 if (document.getElementById("skills-carousel")) {
   const carousel = document.getElementById("skills-carousel");
   const slides = carousel.children;
@@ -88,7 +88,6 @@ if (document.getElementById("skills-carousel")) {
     carousel.style.transform = `translateX(-${index * 100}%)`;
   }
 
-  // 🔁 Movimiento automático cada 3 segundos
   setInterval(() => {
     index = (index + 1) % totalSlides;
     updateCarousel();
