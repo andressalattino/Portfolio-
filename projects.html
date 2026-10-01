@@ -1,235 +1,193 @@
-<!DOCTYPE html>
-<html lang="es">
+<!doctype html>
+<html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio-Home</title>
-
-    <!-- Fira Code desde Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Tailwind CDN -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="title.projects">Andres Salattino | Projects</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Configurar Tailwind para Fira Code -->
-    <script>
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['"Fira Code"', "monospace"],
-            },
-          },
-        },
-      };
-    </script>
+    <script src="src/js/tailwind-config.js"></script>
+    <link href="src/Styles.css" rel="stylesheet">
+    <script type="module" src="app.js"></script>
   </head>
-  <body
-    class="bg-gray-100 flex flex-col min-h-screen font-fira-code dark:bg-gray-900 dark:text-white"
-  >
-    <!-- Header / Nav -->
-     <header
-      class="w-full bg-zinc-200 shadow-xl/20 p-4 flex items-center justify-between dark:bg-zinc-800"
+  <body class="bg-gray-100 flex flex-col min-h-screen font-sans dark:bg-gray-900 dark:text-white">
+    <a href="#main-content" class="skip-link"><span data-i18n="skip">Skip to content</span></a>
+    <header
+      class="w-full bg-zinc-200 shadow-md p-4 flex items-center justify-between gap-3 dark:bg-zinc-800"
     >
-      <!-- Logo -->
-      <a href="index.html">
-        <img src="img/logo_asd-removebg-preview.png" alt="logo" class="h-12" />
-      </a>
-
-      <!-- Contenedor derecho: links + sol -->
-      <div class="flex items-center gap-6">
-        <nav class="hidden md:flex">
-          <ul class="flex gap-8 text-lg font-semibold font-fira-code">
-            <li>
-              <a href="about.html" class="hover:text-blue-500">About me</a>
-            </li>
-            <li>
-              <a href="projects.html" class="hover:text-blue-500">Projects</a>
-            </li>
-            <li>
-              <a href="contact.html" class="hover:text-blue-500">Contact me</a>
-            </li>
-             <li>
-              <a href="education.html" class="hover:text-blue-500">Education</a>
-            </li>
-          </ul>
+      <a href="index.html" data-i18n-aria="nav.home" aria-label="Home"
+        ><img src="img/logo_asd-removebg-preview.png" alt="Andres Salattino" class="h-12"></a
+      >
+      <div class="flex items-center gap-3 lg:gap-6">
+        <nav class="hidden lg:flex gap-6 font-semibold">
+          <a href="about.html" class="hover:text-blue-500 "
+            ><span data-i18n="nav.about">About me</span></a
+          >
+          <a href="projects.html" aria-current="page" class="hover:text-blue-500 "
+            ><span data-i18n="nav.projects">Projects</span></a
+          >
+          <a href="contact.html" class="hover:text-blue-500 "
+            ><span data-i18n="nav.contact">Contact me</span></a
+          >
+          <a href="education.html" class="hover:text-blue-500 "
+            ><span data-i18n="nav.education">Education</span></a
+          >
         </nav>
-
-        <!-- Icono sol -->
-        <svg
-          id="icono-tema"
-          width="32"
-          height="32"
-          stroke="black"
-          class="cursor-pointer dark:stroke-white"
+        <div class="flex flex-col gap-1">
+          <label for="language-select" class="text-xs"
+            ><span data-i18n="language.label">Language</span></label
+          >
+          <select
+            id="language-select"
+            class="rounded-md border border-gray-400 bg-white px-2 py-1 text-sm text-gray-900 dark:bg-zinc-900 dark:text-white"
+          >
+            <option value="en" lang="en">English</option>
+            <option value="es" lang="es">Español</option>
+          </select>
+        </div>
+        <button
+          id="theme-toggle"
+          type="button"
+          data-i18n-aria="theme.toggle"
+          aria-label="Toggle dark mode"
+          aria-pressed="false"
+          class="p-2 rounded-md"
         >
-          <use href="assets/sprites.svg#sun"></use>
-        </svg>
-
-        <!-- boton de menu -->
-        <svg
-          id="btn-nav"
-          width="32"
-          height="32"
-          class="cursor-pointer md:hidden dark:fill-white"
+          <svg width="28" height="28" aria-hidden="true">
+            <use href="assets/sprites.svg#sun"></use>
+          </svg>
+        </button>
+        <button
+          id="menu-toggle"
+          type="button"
+          data-i18n-aria="menu.toggle"
+          aria-label="Navigation menu"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+          class="lg:hidden p-2 rounded-md"
         >
-          <use href="assets/sprites.svg#icono-nav"></use>
-        </svg>
+          <svg width="28" height="28" aria-hidden="true">
+            <use href="assets/sprites.svg#icono-nav"></use>
+          </svg>
+        </button>
       </div>
     </header>
-
-    <!-- Menu desplegable -->
-    <div
+    <nav
       id="mobile-menu"
-      class="hidden flex-col items-center bg-zinc-200 dark:bg-zinc-800 text-lg font-semibold font-fira-code p-4 space-y-4 md:hidden"
+      hidden
+      class="lg:hidden bg-zinc-200 dark:bg-zinc-800 text-center font-semibold p-4"
     >
-      <a href="about.html" class="hover:text-blue-500 block w-full text-center">
-        About me
-      </a>
-      <a
-        href="projects.html"
-        class="hover:text-blue-500 block w-full text-center"
+      <a href="about.html" class="hover:text-blue-500 block py-2"
+        ><span data-i18n="nav.about">About me</span></a
       >
-        Projects
-      </a>
-      <a
-        href="contact.html"
-        class="hover:text-blue-500 block w-full text-center"
+      <a href="projects.html" aria-current="page" class="hover:text-blue-500 block py-2"
+        ><span data-i18n="nav.projects">Projects</span></a
       >
-        Contact me
-      </a>
-      <a
-        href="education.html"
-        class="hover:text-blue-500 block w-full text-center"
+      <a href="contact.html" class="hover:text-blue-500 block py-2"
+        ><span data-i18n="nav.contact">Contact me</span></a
       >
-        Education
-      </a>
-    </div>
-    <!-- Main content centrado -->
-   <!-- Main content centrado -->
-<div class="flex-1 flex items-center justify-center px-4">
-  <main class="w-full max-w-6xl mx-auto px-6 py-12 flex flex-col items-center text-center">
-
-    <!-- TÍTULO CENTRADO -->
-    <h1 class="text-5xl font-bold mb-6 dark:text-blue-400 text-center">
-      Projects
-    </h1>
-
-    <!-- DESCRIPCIÓN CENTRADA -->
-    <p class="mb-10 text-lg text-gray-600 dark:text-gray-300 max-w-2xl text-center">
-      Here are some of the projects I have worked on.
-    </p>
-
-    <!-- GRID CENTRADA -->
-    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 justify-items-center w-full">
-
-      <!-- TARJETA 1: RINOS WEB -->
-      <div class="border rounded-xl p-5 bg-white shadow-md dark:bg-zinc-800 dark:border-zinc-700 w-full max-w-sm">
-        <div class="flex items-start justify-between mb-3">
-          <h2 class="text-lg font-bold">Rinos Web</h2>
-
-          <div class="flex gap-2">
-            <!-- Link externo -->
-            <a href="https://rino-web-nine.vercel.app/" target="_blank">
-              <svg width="20" height="20" fill="currentColor" class="text-blue-400 hover:text-blue-600">
-                <use href="assets/sprites.svg#rocket"></use>
-              </svg>
-            </a>
-
-            <!-- GitHub -->
-            <a href="https://github.com/andressalattino/RinoWeb" target="_blank">
-              <svg width="20" height="20" fill="currentColor" class="text-blue-400 hover:text-blue-600">
-                <use href="assets/sprites.svg#github"></use>
-              </svg>
-            </a>
+      <a href="education.html" class="hover:text-blue-500 block py-2"
+        ><span data-i18n="nav.education">Education</span></a
+      >
+    </nav>
+    <main id="main-content" class="flex-1 w-full max-w-6xl mx-auto px-6 py-12 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 text-blue-600 dark:text-blue-400">
+        <span data-i18n="nav.projects">Projects</span>
+      </h1>
+      <p class="mb-10 text-lg text-gray-600 dark:text-gray-300">
+        <span data-i18n="projects.intro">Here are some of the projects I have worked on.</span>
+      </p>
+      <div class="grid gap-6 md:grid-cols-2">
+        <article
+          class="border rounded-xl p-6 bg-white shadow-md dark:bg-zinc-800 dark:border-zinc-700 flex flex-col text-left"
+        >
+          <h2 class="text-xl font-bold mb-4">Rinos Turismo</h2>
+          <p class="text-sm text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+            <span data-i18n="projects.rinos"
+              >Tourism website for exploring destinations, travel packages, and services through a
+              responsive interface. It includes an administration panel to manage packages, featured
+              destinations, and other site content, with Supabase as its database. Deployed on
+              Vercel.</span
+            >
+          </p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">HTML</span
+            ><span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">JavaScript</span
+            ><span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">Tailwind CSS</span
+            ><span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">Supabase</span>
           </div>
-        </div>
-
-        <!-- ⭐ Descripción COMPLETA original -->
-        <p class="text-sm text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-          “Rino Web” es una página de turismo desarrollada y desplegada en Vercel.
-          Ofrece una experiencia visual moderna y responsiva para explorar destinos, 
-          paquetes y servicios turísticos. Su diseño está orientado a la facilidad de uso,
-          el rendimiento y la presentación atractiva de la información para inspirar y 
-          facilitar la planificación de viajes.
-        </p>
-
-        <!-- BADGES -->
-        <div class="flex flex-wrap gap-2">
-          <span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">Tailwind</span>
-          <span class="bg-gray-800 text-white text-xs px-3 py-1 rounded-full">HTML</span>
-          <span class="bg-indigo-500 text-white text-xs px-3 py-1 rounded-full">JS</span>
-        </div>
-      </div>
-
-      <!-- TARJETA 2 -->
-      <div class="border rounded-xl p-5 bg-white shadow-md dark:bg-zinc-800 dark:border-zinc-700 w-full max-w-sm">
-        <div class="flex items-start justify-between mb-3">
-          <h2 class="text-lg font-bold">Futuro Proyecto</h2>
-          <div class="flex gap-2">
-            <a href="#" target="_blank">
-              <svg width="20" height="20" fill="currentColor" class="text-blue-400 hover:text-blue-600">
+          <div
+            class="flex flex-wrap gap-4 mt-auto text-blue-600 dark:text-blue-400 text-sm font-semibold"
+          >
+            <a
+              href="https://rino-web-nine.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 hover:underline"
+              ><svg width="20" height="20" aria-hidden="true">
                 <use href="assets/sprites.svg#rocket"></use>
-              </svg>
-            </a>
-            <a href="#" target="_blank">
-              <svg width="20" height="20" fill="currentColor" class="text-blue-400 hover:text-blue-600">
+              </svg><span data-i18n="projects.visit">Visit website</span></a
+            >
+            <a
+              href="https://github.com/andressalattino/RinoWeb"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 hover:underline"
+              ><svg width="20" height="20" aria-hidden="true">
                 <use href="assets/sprites.svg#github"></use>
-              </svg>
-            </a>
+              </svg><span data-i18n="projects.code">View code</span></a
+            >
           </div>
-        </div>
-
-        <p class="text-sm text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-          Información del proyecto.
-        </p>
-
-        <div class="flex flex-wrap gap-2">
-          <span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">Remix</span>
-          <span class="bg-gray-800 text-white text-xs px-3 py-1 rounded-full">Cloudflare</span>
-          <span class="bg-indigo-500 text-white text-xs px-3 py-1 rounded-full">KV</span>
-        </div>
-      </div>
-
-      <!-- TARJETA 3 -->
-      <div class="border rounded-xl p-5 bg-white shadow-md dark:bg-zinc-800 dark:border-zinc-700 w-full max-w-sm">
-        <div class="flex items-start justify-between mb-3">
-          <h2 class="text-lg font-bold">Futuro Proyecto</h2>
-          <div class="flex gap-2">
-            <a href="#" target="_blank">
-              <svg width="20" height="20" fill="currentColor" class="text-blue-400 hover:text-blue-600">
+        </article>
+        <article
+          class="border rounded-xl p-6 bg-white shadow-md dark:bg-zinc-800 dark:border-zinc-700 flex flex-col text-left"
+        >
+          <h2 class="text-xl font-bold mb-4">Earplugs MDZ</h2>
+          <p class="text-sm text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+            <span data-i18n="projects.earplugs"
+              >Product showcase and catalog for Earplugs MDZ. Its administration panel lets the
+              owner update images, add products, adjust prices, and review key website statistics.
+              It uses Supabase as its database and is deployed on Vercel.</span
+            >
+          </p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">HTML</span
+            ><span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">CSS</span
+            ><span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">JavaScript</span
+            ><span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">Tailwind CSS</span
+            ><span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">Vite</span
+            ><span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">Node.js</span
+            ><span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">Chart.js</span
+            ><span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">Supabase</span
+            ><span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">Vercel</span>
+          </div>
+          <div
+            class="flex flex-wrap gap-4 mt-auto text-blue-600 dark:text-blue-400 text-sm font-semibold"
+          >
+            <a
+              href="https://earplugs-mdz.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 hover:underline"
+              ><svg width="20" height="20" aria-hidden="true">
                 <use href="assets/sprites.svg#rocket"></use>
-              </svg>
-            </a>
-            <a href="#" target="_blank">
-              <svg width="20" height="20" fill="currentColor" class="text-blue-400 hover:text-blue-600">
+              </svg><span data-i18n="projects.visit">Visit website</span></a
+            >
+            <a
+              href="https://github.com/andressalattino/EarplugsMdz"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 hover:underline"
+              ><svg width="20" height="20" aria-hidden="true">
                 <use href="assets/sprites.svg#github"></use>
-              </svg>
-            </a>
+              </svg><span data-i18n="projects.code">View code</span></a
+            >
           </div>
-        </div>
-
-        <p class="text-sm text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-          Información del proyecto.
-        </p>
-
-        <div class="flex flex-wrap gap-2">
-          <span class="bg-yellow-500 text-white text-xs px-3 py-1 rounded-full">Python</span>
-          <span class="bg-green-600 text-white text-xs px-3 py-1 rounded-full">FastAPI</span>
-          <span class="bg-purple-600 text-white text-xs px-3 py-1 rounded-full">LLMs</span>
-          <span class="bg-gray-700 text-white text-xs px-3 py-1 rounded-full">Ollama</span>
-        </div>
+        </article>
       </div>
-
-    </div>
-  </main>
-</div>
-
-
-    <script src="app.js"></script>
+      <p class="mt-8 text-sm text-gray-600 dark:text-gray-300">
+        <span data-i18n="projects.soon">More projects coming soon.</span>
+      </p>
+    </main>
   </body>
 </html>

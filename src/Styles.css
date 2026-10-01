@@ -1,0 +1,64 @@
+body {
+  font-family: "Fira Code", monospace;
+}
+[hidden] {
+  display: none;
+}
+button,
+select {
+  cursor: pointer;
+}
+:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 4px;
+}
+[aria-current="page"] {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -5rem;
+  z-index: 50;
+  padding: 0.75rem;
+  background: white;
+  color: #111827;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+#home-subtitle {
+  min-height: 8em;
+}
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-slide {
+  animation: slide 12s linear infinite;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.animate-slide:hover {
+  animation-play-state: paused;
+}
+@media (max-width: 400px) {
+  #skills-carousel img {
+    width: 40px;
+    height: 40px;
+    margin: 0 6px;
+  }
+  .animate-slide {
+    animation-duration: 16s;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-slide {
+    animation: none;
+  }
+}

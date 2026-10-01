@@ -1,170 +1,169 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio-Education</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap"
-      rel="stylesheet"
-    />
-<style>
-@keyframes slide {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.animate-slide {
-  animation: slide 12s linear infinite;
-  display: flex;
-  flex-wrap: nowrap;
-}
-
-@media (max-width: 400px) {
-  #skills-carousel img {
-    width: 40px;
-    height: 40px;
-    margin: 0 6px;
-  }
-  .animate-slide {
-    animation: slide 16s linear infinite;
-  }
-}
-
-/* 🔹 Detener animación al pasar el mouse o tocar en mobile */
-.animate-slide:hover {
-  animation-play-state: paused;
-}
-</style>
-    <!-- Tailwind CDN -->
+    <title data-i18n="title.education">Andres Salattino | Education</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Configurar Tailwind para Fira Code -->
-    <script>
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['"Fira Code"', "monospace"],
-            },
-          },
-        },
-      };
-    </script>
+    <script src="src/js/tailwind-config.js"></script>
+    <link href="src/Styles.css" rel="stylesheet">
+    <script type="module" src="app.js"></script>
   </head>
-  <body
-    class="bg-gray-100 flex flex-col min-h-screen font-fira-code dark:bg-gray-900 dark:text-white"
-  >
-     <header
-      class="w-full bg-zinc-200 shadow-xl/20 p-4 flex items-center justify-between dark:bg-zinc-800"
+  <body class="bg-gray-100 flex flex-col min-h-screen font-sans dark:bg-gray-900 dark:text-white">
+    <a href="#main-content" class="skip-link"><span data-i18n="skip">Skip to content</span></a>
+    <header
+      class="w-full bg-zinc-200 shadow-md p-4 flex items-center justify-between gap-3 dark:bg-zinc-800"
     >
-      <!-- Logo -->
-      <a href="index.html">
-        <img src="img/logo_asd-removebg-preview.png" alt="logo" class="h-12" />
-      </a>
-
-      <!-- Contenedor derecho: links + sol -->
-      <div class="flex items-center gap-6">
-        <nav class="hidden md:flex">
-          <ul class="flex gap-8 text-lg font-semibold font-fira-code">
-            <li>
-              <a href="about.html" class="hover:text-blue-500">About me</a>
-            </li>
-            <li>
-              <a href="projects.html" class="hover:text-blue-500">Projects</a>
-            </li>
-            <li>
-              <a href="contact.html" class="hover:text-blue-500">Contact me</a>
-            </li>
-             <li>
-              <a href="education.html" class="hover:text-blue-500">Education</a>
-            </li>
-          </ul>
+      <a href="index.html" data-i18n-aria="nav.home" aria-label="Home"
+        ><img src="img/logo_asd-removebg-preview.png" alt="Andres Salattino" class="h-12"></a
+      >
+      <div class="flex items-center gap-3 lg:gap-6">
+        <nav class="hidden lg:flex gap-6 font-semibold">
+          <a href="about.html" class="hover:text-blue-500 "
+            ><span data-i18n="nav.about">About me</span></a
+          >
+          <a href="projects.html" class="hover:text-blue-500 "
+            ><span data-i18n="nav.projects">Projects</span></a
+          >
+          <a href="contact.html" class="hover:text-blue-500 "
+            ><span data-i18n="nav.contact">Contact me</span></a
+          >
+          <a href="education.html" aria-current="page" class="hover:text-blue-500 "
+            ><span data-i18n="nav.education">Education</span></a
+          >
         </nav>
-
-        <!-- Icono sol -->
-        <svg
-          id="icono-tema"
-          width="32"
-          height="32"
-          stroke="black"
-          class="cursor-pointer dark:stroke-white"
+        <div class="flex flex-col gap-1">
+          <label for="language-select" class="text-xs"
+            ><span data-i18n="language.label">Language</span></label
+          >
+          <select
+            id="language-select"
+            class="rounded-md border border-gray-400 bg-white px-2 py-1 text-sm text-gray-900 dark:bg-zinc-900 dark:text-white"
+          >
+            <option value="en" lang="en">English</option>
+            <option value="es" lang="es">Español</option>
+          </select>
+        </div>
+        <button
+          id="theme-toggle"
+          type="button"
+          data-i18n-aria="theme.toggle"
+          aria-label="Toggle dark mode"
+          aria-pressed="false"
+          class="p-2 rounded-md"
         >
-          <use href="assets/sprites.svg#sun"></use>
-        </svg>
-
-        <!-- boton de menu -->
-        <svg
-          id="btn-nav"
-          width="32"
-          height="32"
-          class="cursor-pointer md:hidden dark:fill-white"
+          <svg width="28" height="28" aria-hidden="true">
+            <use href="assets/sprites.svg#sun"></use>
+          </svg>
+        </button>
+        <button
+          id="menu-toggle"
+          type="button"
+          data-i18n-aria="menu.toggle"
+          aria-label="Navigation menu"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+          class="lg:hidden p-2 rounded-md"
         >
-          <use href="assets/sprites.svg#icono-nav"></use>
-        </svg>
+          <svg width="28" height="28" aria-hidden="true">
+            <use href="assets/sprites.svg#icono-nav"></use>
+          </svg>
+        </button>
       </div>
     </header>
-
-    <!-- Menu desplegable -->
-    <div
+    <nav
       id="mobile-menu"
-      class="hidden flex-col items-center bg-zinc-200 dark:bg-zinc-800 text-lg font-semibold font-fira-code p-4 space-y-4 md:hidden"
+      hidden
+      class="lg:hidden bg-zinc-200 dark:bg-zinc-800 text-center font-semibold p-4"
     >
-      <a href="about.html" class="hover:text-blue-500 block w-full text-center">
-        About me
-      </a>
-      <a
-        href="projects.html"
-        class="hover:text-blue-500 block w-full text-center"
+      <a href="about.html" class="hover:text-blue-500 block py-2"
+        ><span data-i18n="nav.about">About me</span></a
       >
-        Projects
-      </a>
-      <a
-        href="contact.html"
-        class="hover:text-blue-500 block w-full text-center"
+      <a href="projects.html" class="hover:text-blue-500 block py-2"
+        ><span data-i18n="nav.projects">Projects</span></a
       >
-        Contact me
-      </a>
-      <a
-        href="education.html"
-        class="hover:text-blue-500 block w-full text-center"
+      <a href="contact.html" class="hover:text-blue-500 block py-2"
+        ><span data-i18n="nav.contact">Contact me</span></a
       >
-        Education
-      </a>
-    </div>
-    <script src="app.js" ></script>
-   <main class="flex flex-col items-center justify-center py-12 px-6">
-  <p class="text-center max-w-2xl text-lg mb-10">
-    2nd-year student of the University Technician in Programming program at the National Technological University (UTN) – Mendoza.
-  </p>
+      <a href="education.html" aria-current="page" class="hover:text-blue-500 block py-2"
+        ><span data-i18n="nav.education">Education</span></a
+      >
+    </nav>
+    <main id="main-content" class="flex-1 flex flex-col items-center justify-center py-12 px-6">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 text-blue-600 dark:text-blue-400">
+        <span data-i18n="nav.education">Education</span>
+      </h1>
+      <p class="text-center max-w-2xl text-lg mb-10">
+        <span data-i18n="education.intro"
+          >2nd-year student of the University Technician in Programming program at the National
+          Technological University (UTN) – Mendoza.</span
+        >
+      </p>
+      <section class="w-full max-w-4xl mx-auto mt-10">
+        <h2 class="text-2xl font-semibold text-center mb-6 text-blue-600 dark:text-blue-400">
+          <span data-i18n="education.skills">My skills</span>
+        </h2>
+        <div class="relative overflow-hidden">
+          <div id="skills-carousel" class="flex w-[200%] animate-slide">
+            <div class="flex justify-around items-center w-1/2">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                class="w-16 h-16"
+                alt="HTML"
+              >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                class="w-16 h-16"
+                alt="CSS"
+              >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                class="w-16 h-16"
+                alt="JavaScript"
+              >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+                class="w-16 h-16"
+                alt="Java"
+              >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                class="w-16 h-16"
+                alt="Python"
+              >
+            </div>
 
-  <!-- 🌟 Carrusel de habilidades -->
-<section class="w-full max-w-4xl mx-auto mt-10">
-  <h2 class="text-2xl font-semibold text-center mb-6 text-blue-600 dark:text-blue-400">
-    My Skills
-  </h2>
-
-  <div class="relative overflow-hidden">
-    <div id="skills-carousel" class="flex w-[200%] animate-slide">
-      <div class="flex justify-around items-center w-1/2">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="w-16 h-16" alt="HTML" />
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="w-16 h-16" alt="CSS" />
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="w-16 h-16" alt="JavaScript" />
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" class="w-16 h-16" alt="Java" />
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="w-16 h-16" alt="Python" />
-      </div>
-
-      <div class="flex justify-around items-center w-1/2">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="w-16 h-16" alt="HTML" />
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="w-16 h-16" alt="CSS" />
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="w-16 h-16" alt="JavaScript" />
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" class="w-16 h-16" alt="Java" />
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="w-16 h-16" alt="Python" />
-      </div>
-    </div>
-  </div>
-</section>
-</main>
-</body>
+            <div aria-hidden="true" class="flex justify-around items-center w-1/2">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                class="w-16 h-16"
+                alt="HTML"
+              >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                class="w-16 h-16"
+                alt="CSS"
+              >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                class="w-16 h-16"
+                alt="JavaScript"
+              >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+                class="w-16 h-16"
+                alt="Java"
+              >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                class="w-16 h-16"
+                alt="Python"
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
