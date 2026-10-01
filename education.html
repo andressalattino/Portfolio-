@@ -3,11 +3,57 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Critical preferences run before styles, external resources, and the first paint. -->
+    <style>
+    html {
+      background-color: #f3f4f6;
+      color-scheme: light;
+    }
+    html.dark {
+      background-color: #111827;
+      color-scheme: dark;
+    }
+    html[data-preferences-pending] body {
+      visibility: hidden;
+    }
+    </style>
+    <script>
+    (() => {
+      const root = document.documentElement;
+      let language = "en";
+      try {
+        root.classList.toggle("dark", localStorage.getItem("tema") === "dark");
+        language = localStorage.getItem("portfolio-language") === "es" ? "es" : "en";
+      } catch {
+        // Keep the default preferences when storage is unavailable.
+      }
+      root.lang = language;
+      root.setAttribute("data-preferences-pending", "");
+      // A failed module must not leave the page permanently invisible.
+      const revealFallback = () => {
+        root.lang = "en";
+        root.removeAttribute("data-preferences-pending");
+      };
+      const timeout = setTimeout(revealFallback, 10000);
+      document.addEventListener("preferences-ready", () => clearTimeout(timeout), { once: true });
+      window.addEventListener(
+        "error",
+        (event) => {
+          if (event.target instanceof HTMLScriptElement && event.target.type === "module") {
+            clearTimeout(timeout);
+            revealFallback();
+          }
+        },
+        true,
+      );
+    })();
+    </script>
     <title data-i18n="title.education">Andres Salattino | Education</title>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="src/js/tailwind-config.js"></script>
     <link href="src/Styles.css" rel="stylesheet">
+    <link rel="modulepreload" href="src/js/translations.js">
     <script type="module" src="app.js"></script>
   </head>
   <body class="bg-gray-100 flex flex-col min-h-screen font-sans dark:bg-gray-900 dark:text-white">

@@ -1,5 +1,11 @@
 body {
   font-family: "Fira Code", monospace;
+  background-color: #f3f4f6;
+  color: #111827;
+}
+html.dark body {
+  background-color: #111827;
+  color: #fff;
 }
 [hidden] {
   display: none;

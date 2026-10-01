@@ -25,6 +25,8 @@ El sitio utiliza los CDN de Tailwind, Google Fonts y Devicon; necesita conexión
 
 El selector guarda el idioma en localStorage (portfolio-language), y el tema conserva la clave original (tema). Si el navegador bloquea el almacenamiento, los controles siguen funcionando en la página actual.
 
+Cada HTML incluye un bloque crítico en el head que aplica el tema guardado antes de cargar recursos externos. El contenido se mantiene oculto hasta que app.js termina de aplicar las traducciones y sincronizar el botón de tema, evitando mostrar el idioma o tema de respaldo al navegar. El fondo inicial coincide con el tema elegido. Si falla la descarga del módulo o tarda más de diez segundos, se muestra el contenido de respaldo en inglés para mantener el sitio accesible; sin JavaScript, el HTML se muestra normalmente. Este bloque debe mantenerse igual en las cinco páginas.
+
 ## Calidad de código
 
 ```sh
