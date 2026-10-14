@@ -1,7 +1,27 @@
+:root {
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "Fira Code", monospace;
+  --font-display: "Lora", Georgia, serif;
+}
 body {
-  font-family: "Fira Code", monospace;
+  font-family: var(--font-sans);
   background-color: #f3f4f6;
   color: #111827;
+}
+main h1,
+header nav,
+#mobile-menu,
+label[for="language-select"] {
+  font-family: var(--font-mono);
+}
+main .hero-title {
+  font-family: var(--font-sans);
+  font-weight: 300;
+}
+.hero-name {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
 }
 html.dark body {
   background-color: #111827;
@@ -45,8 +65,40 @@ select {
     transform: translateX(-50%);
   }
 }
+.skills-window {
+  width: 100%;
+  overflow: hidden;
+  padding: 12px 0;
+}
+#skills-carousel {
+  width: max-content;
+}
+.skills-group {
+  display: flex;
+  flex-shrink: 0;
+  gap: 32px;
+  padding: 8px 16px;
+}
+.skill-item {
+  display: flex;
+  flex: 0 0 100px;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.skill-icon {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+html.dark .skill-monochrome {
+  filter: invert(1);
+}
 .animate-slide {
-  animation: slide 12s linear infinite;
+  animation: slide 60s linear infinite;
   display: flex;
   flex-wrap: nowrap;
 }
@@ -54,17 +106,31 @@ select {
   animation-play-state: paused;
 }
 @media (max-width: 400px) {
-  #skills-carousel img {
+  .skill-icon {
     width: 40px;
     height: 40px;
-    margin: 0 6px;
   }
-  .animate-slide {
-    animation-duration: 16s;
+  .skills-group {
+    gap: 24px;
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+  .skill-item {
+    flex-basis: 84px;
+    font-size: 11px;
+  }
+  #skills-carousel {
+    animation-duration: 50s;
   }
 }
 @media (prefers-reduced-motion: reduce) {
   .animate-slide {
     animation: none;
+  }
+  .skills-window {
+    overflow-x: auto;
+  }
+  .skills-group[aria-hidden="true"] {
+    display: none;
   }
 }

@@ -49,7 +49,10 @@
     })();
     </script>
     <title data-i18n="title.education">Andres Salattino | Education</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&amp;family=Inter:wght@300;400;500;600;700&amp;family=Lora:ital,wght@1,400&amp;display=swap"
+      rel="stylesheet"
+    >
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="src/js/tailwind-config.js"></script>
     <link href="src/Styles.css" rel="stylesheet">
@@ -150,65 +153,334 @@
         <h2 class="text-2xl font-semibold text-center mb-6 text-blue-600 dark:text-blue-400">
           <span data-i18n="education.skills">My skills</span>
         </h2>
-        <div class="relative overflow-hidden">
-          <div id="skills-carousel" class="flex w-[200%] animate-slide">
-            <div class="flex justify-around items-center w-1/2">
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-                class="w-16 h-16"
-                alt="HTML"
-              >
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
-                class="w-16 h-16"
-                alt="CSS"
-              >
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                class="w-16 h-16"
-                alt="JavaScript"
-              >
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
-                class="w-16 h-16"
-                alt="Java"
-              >
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-                class="w-16 h-16"
-                alt="Python"
-              >
+        <section class="skills-window" data-i18n-aria="education.skills" aria-label="My skills">
+          <div id="skills-carousel" class="animate-slide">
+            <div class="skills-group">
+              <div class="skill-item">
+                <img src="assets/skills/html5.svg" class="skill-icon" alt="" width="64" height="64">
+                <span>HTML</span>
+              </div>
+              <div class="skill-item">
+                <img src="assets/skills/css3.svg" class="skill-icon" alt="" width="64" height="64">
+                <span>CSS</span>
+              </div>
+              <div class="skill-item">
+                <img
+                  src="assets/skills/javascript.svg"
+                  class="skill-icon"
+                  alt=""
+                  width="64"
+                  height="64"
+                >
+                <span>JavaScript</span>
+              </div>
+              <div class="skill-item">
+                <img src="assets/skills/java.svg" class="skill-icon" alt="" width="64" height="64">
+                <span>Java</span>
+              </div>
+              <div class="skill-item">
+                <img
+                  src="assets/skills/python.svg"
+                  class="skill-icon"
+                  alt=""
+                  width="64"
+                  height="64"
+                >
+                <span>Python</span>
+              </div>
+              <div class="skill-item">
+                <img src="assets/skills/react.svg" class="skill-icon" alt="" width="64" height="64">
+                <span>React</span>
+              </div>
+              <div class="skill-item">
+                <img
+                  src="assets/skills/reactrouter.svg"
+                  class="skill-icon"
+                  alt=""
+                  width="64"
+                  height="64"
+                >
+                <span>React Router</span>
+              </div>
+              <div class="skill-item">
+                <img
+                  src="assets/skills/nextjs.svg"
+                  class="skill-icon skill-monochrome"
+                  alt=""
+                  width="64"
+                  height="64"
+                >
+                <span>Next.js</span>
+              </div>
+              <div class="skill-item">
+                <img
+                  src="assets/skills/typescript.svg"
+                  class="skill-icon"
+                  alt=""
+                  width="64"
+                  height="64"
+                >
+                <span>TypeScript</span>
+              </div>
+              <div class="skill-item">
+                <img
+                  src="assets/skills/tailwindcss.svg"
+                  class="skill-icon"
+                  alt=""
+                  width="64"
+                  height="64"
+                >
+                <span>Tailwind CSS</span>
+              </div>
+              <div class="skill-item">
+                <img
+                  src="assets/skills/vitejs.svg"
+                  class="skill-icon"
+                  alt=""
+                  width="64"
+                  height="64"
+                >
+                <span>Vite</span>
+              </div>
+              <div class="skill-item">
+                <img
+                  src="assets/skills/nodejs.svg"
+                  class="skill-icon"
+                  alt=""
+                  width="64"
+                  height="64"
+                >
+                <span>Node.js</span>
+              </div>
+              <div class="skill-item">
+                <img
+                  src="assets/skills/cloudflare.svg"
+                  class="skill-icon"
+                  alt=""
+                  width="64"
+                  height="64"
+                >
+                <span>Cloudflare</span>
+              </div>
+              <div class="skill-item">
+                <img
+                  src="assets/skills/supabase.svg"
+                  class="skill-icon"
+                  alt=""
+                  width="64"
+                  height="64"
+                >
+                <span>Supabase</span>
+              </div>
+              <div class="skill-item">
+                <img
+                  src="assets/skills/postgresql.svg"
+                  class="skill-icon"
+                  alt=""
+                  width="64"
+                  height="64"
+                >
+                <span>PostgreSQL</span>
+              </div>
+              <div class="skill-item">
+                <img
+                  src="assets/skills/drizzle.svg"
+                  class="skill-icon"
+                  alt=""
+                  width="64"
+                  height="64"
+                >
+                <span>Drizzle ORM</span>
+              </div>
+              <div class="skill-item">
+                <img src="assets/skills/biome.svg" class="skill-icon" alt="" width="64" height="64">
+                <span>Biome</span>
+              </div>
+              <div class="skill-item">
+                <img
+                  src="assets/skills/chartdotjs.svg"
+                  class="skill-icon"
+                  alt=""
+                  width="64"
+                  height="64"
+                >
+                <span>Chart.js</span>
+              </div>
+              <div class="skill-item">
+                <img
+                  src="assets/skills/vercel.svg"
+                  class="skill-icon skill-monochrome"
+                  alt=""
+                  width="64"
+                  height="64"
+                >
+                <span>Vercel</span>
+              </div>
             </div>
-
-            <div aria-hidden="true" class="flex justify-around items-center w-1/2">
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-                class="w-16 h-16"
-                alt="HTML"
-              >
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
-                class="w-16 h-16"
-                alt="CSS"
-              >
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                class="w-16 h-16"
-                alt="JavaScript"
-              >
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
-                class="w-16 h-16"
-                alt="Java"
-              >
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-                class="w-16 h-16"
-                alt="Python"
-              >
+            <div class="skills-group" aria-hidden="true">
+              <div class="skill-item">
+                <img src="assets/skills/html5.svg" class="skill-icon" alt="" width="64" height="64">
+                <span>HTML</span>
+              </div>
+              <div class="skill-item">
+                <img src="assets/skills/css3.svg" class="skill-icon" alt="" width="64" height="64">
+                <span>CSS</span>
+              </div>
+              <div class="skill-item">
+                <img
+                  src="assets/skills/javascript.svg"
+                  class="skill-icon"
+                  alt=""
+                  width="64"
+                  height="64"
+                >
+                <span>JavaScript</span>
+              </div>
+              <div class="skill-item">
+                <img src="assets/skills/java.svg" class="skill-icon" alt="" width="64" height="64">
+                <span>Java</span>
+              </div>
+              <div class="skill-item">
+                <img
+                  src="assets/skills/python.svg"
+                  class="skill-icon"
+                  alt=""
+                  width="64"
+                  height="64"
+                >
+                <span>Python</span>
+              </div>
+              <div class="skill-item">
+                <img src="assets/skills/react.svg" class="skill-icon" alt="" width="64" height="64">
+                <span>React</span>
+              </div>
+              <div class="skill-item">
+                <img
+                  src="assets/skills/reactrouter.svg"
+                  class="skill-icon"
+                  alt=""
+                  width="64"
+                  height="64"
+                >
+                <span>React Router</span>
+              </div>
+              <div class="skill-item">
+                <img
+                  src="assets/skills/nextjs.svg"
+                  class="skill-icon skill-monochrome"
+                  alt=""
+                  width="64"
+                  height="64"
+                >
+                <span>Next.js</span>
+              </div>
+              <div class="skill-item">
+                <img
+                  src="assets/skills/typescript.svg"
+                  class="skill-icon"
+                  alt=""
+                  width="64"
+                  height="64"
+                >
+                <span>TypeScript</span>
+              </div>
+              <div class="skill-item">
+                <img
+                  src="assets/skills/tailwindcss.svg"
+                  class="skill-icon"
+                  alt=""
+                  width="64"
+                  height="64"
+                >
+                <span>Tailwind CSS</span>
+              </div>
+              <div class="skill-item">
+                <img
+                  src="assets/skills/vitejs.svg"
+                  class="skill-icon"
+                  alt=""
+                  width="64"
+                  height="64"
+                >
+                <span>Vite</span>
+              </div>
+              <div class="skill-item">
+                <img
+                  src="assets/skills/nodejs.svg"
+                  class="skill-icon"
+                  alt=""
+                  width="64"
+                  height="64"
+                >
+                <span>Node.js</span>
+              </div>
+              <div class="skill-item">
+                <img
+                  src="assets/skills/cloudflare.svg"
+                  class="skill-icon"
+                  alt=""
+                  width="64"
+                  height="64"
+                >
+                <span>Cloudflare</span>
+              </div>
+              <div class="skill-item">
+                <img
+                  src="assets/skills/supabase.svg"
+                  class="skill-icon"
+                  alt=""
+                  width="64"
+                  height="64"
+                >
+                <span>Supabase</span>
+              </div>
+              <div class="skill-item">
+                <img
+                  src="assets/skills/postgresql.svg"
+                  class="skill-icon"
+                  alt=""
+                  width="64"
+                  height="64"
+                >
+                <span>PostgreSQL</span>
+              </div>
+              <div class="skill-item">
+                <img
+                  src="assets/skills/drizzle.svg"
+                  class="skill-icon"
+                  alt=""
+                  width="64"
+                  height="64"
+                >
+                <span>Drizzle ORM</span>
+              </div>
+              <div class="skill-item">
+                <img src="assets/skills/biome.svg" class="skill-icon" alt="" width="64" height="64">
+                <span>Biome</span>
+              </div>
+              <div class="skill-item">
+                <img
+                  src="assets/skills/chartdotjs.svg"
+                  class="skill-icon"
+                  alt=""
+                  width="64"
+                  height="64"
+                >
+                <span>Chart.js</span>
+              </div>
+              <div class="skill-item">
+                <img
+                  src="assets/skills/vercel.svg"
+                  class="skill-icon skill-monochrome"
+                  alt=""
+                  width="64"
+                  height="64"
+                >
+                <span>Vercel</span>
+              </div>
             </div>
           </div>
-        </div>
+        </section>
       </section>
     </main>
   </body>

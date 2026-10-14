@@ -28,6 +28,10 @@ export const translations = {
       "Tourism website for exploring destinations, travel packages, and services through a responsive interface. It includes an administration panel to manage packages, featured destinations, and other site content, with Supabase as its database. Deployed on Vercel.",
     "projects.earplugs":
       "Product showcase and catalog for Earplugs MDZ. Its administration panel lets the owner update images, add products, adjust prices, and review key website statistics. It uses Supabase as its database and is deployed on Vercel.",
+    "projects.stg":
+      "Tourism platform with a trip catalog, PDF itineraries, photo gallery, testimonials, and WhatsApp inquiries.",
+    "projects.stgAdmin":
+      "Its authenticated admin panel manages trips, photos, and comments; issues receipts and quotations as PDFs; records expenses in ARS/USD; and displays income, expenses, and balance statistics.",
     "projects.visit": "Visit website",
     "projects.code": "View code",
     "projects.future": "Upcoming project",
@@ -76,6 +80,10 @@ export const translations = {
       "Sitio de turismo para explorar destinos, paquetes y servicios de viaje desde una interfaz adaptable a distintos dispositivos. Incluye un panel de administración para gestionar paquetes, destinos destacados y otros contenidos, con Supabase como base de datos. Desplegado en Vercel.",
     "projects.earplugs":
       "Sitio de presentación y catálogo de productos de Earplugs MDZ. Cuenta con un panel de administración para actualizar imágenes, agregar productos, modificar precios y consultar las principales estadísticas del sitio. Utiliza Supabase como base de datos y está desplegado en Vercel.",
+    "projects.stg":
+      "Plataforma de turismo con catálogo de viajes, programas en PDF, galería, testimonios y consultas por WhatsApp.",
+    "projects.stgAdmin":
+      "Su panel de administración con acceso autenticado permite gestionar viajes, fotos y comentarios; emitir recibos y cotizaciones en PDF; registrar egresos en ARS/USD y consultar estadísticas de ingresos, egresos y saldo.",
     "projects.visit": "Visitar sitio",
     "projects.code": "Ver código",
     "projects.future": "Próximo proyecto",

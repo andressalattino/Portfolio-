@@ -49,7 +49,10 @@
     })();
     </script>
     <title data-i18n="title.projects">Andres Salattino | Projects</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&amp;family=Inter:wght@300;400;500;600;700&amp;family=Lora:ital,wght@1,400&amp;display=swap"
+      rel="stylesheet"
+    >
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="src/js/tailwind-config.js"></script>
     <link href="src/Styles.css" rel="stylesheet">
@@ -143,7 +146,7 @@
       <p class="mb-10 text-lg text-gray-600 dark:text-gray-300">
         <span data-i18n="projects.intro">Here are some of the projects I have worked on.</span>
       </p>
-      <div class="grid gap-6 md:grid-cols-2">
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         <article
           class="border rounded-xl p-6 bg-white shadow-md dark:bg-zinc-800 dark:border-zinc-700 flex flex-col text-left"
         >
@@ -221,6 +224,55 @@
             >
             <a
               href="https://github.com/andressalattino/EarplugsMdz"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 hover:underline"
+              ><svg width="20" height="20" aria-hidden="true">
+                <use href="assets/sprites.svg#github"></use>
+              </svg><span data-i18n="projects.code">View code</span></a
+            >
+          </div>
+        </article>
+        <article
+          class="border rounded-xl p-6 bg-white shadow-md dark:bg-zinc-800 dark:border-zinc-700 flex flex-col text-left"
+        >
+          <h2 class="text-xl font-bold mb-4">STG Viajes y Turismo</h2>
+          <div class="text-sm text-gray-600 dark:text-gray-300 mb-6 leading-relaxed space-y-3">
+            <p data-i18n="projects.stg">
+              Tourism platform with a trip catalog, PDF itineraries, photo gallery, testimonials,
+              and WhatsApp inquiries.
+            </p>
+            <p data-i18n="projects.stgAdmin">
+              Its authenticated admin panel manages trips, photos, and comments; issues receipts and
+              quotations as PDFs; records expenses in ARS/USD; and displays income, expenses, and
+              balance statistics.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">Next.js</span
+            ><span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">TypeScript</span
+            ><span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">Tailwind CSS</span
+            ><span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">Drizzle ORM</span
+            ><span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full"
+              >Supabase / PostgreSQL</span
+            ><span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full"
+              >Biome (linter)</span
+            >
+          </div>
+          <div
+            class="flex flex-wrap gap-4 mt-auto text-blue-600 dark:text-blue-400 text-sm font-semibold"
+          >
+            <a
+              href="https://stg-turismo.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 hover:underline"
+              ><svg width="20" height="20" aria-hidden="true">
+                <use href="assets/sprites.svg#rocket"></use>
+              </svg><span data-i18n="projects.visit">Visit website</span></a
+            >
+            <a
+              href="https://github.com/andressalattino/STG"
               target="_blank"
               rel="noopener noreferrer"
               class="inline-flex items-center gap-2 hover:underline"
