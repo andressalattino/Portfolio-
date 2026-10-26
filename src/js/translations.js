@@ -32,6 +32,22 @@ export const translations = {
       "Tourism platform with a trip catalog, PDF itineraries, photo gallery, testimonials, and WhatsApp inquiries.",
     "projects.stgAdmin":
       "Its authenticated admin panel manages trips, photos, and comments; issues receipts and quotations as PDFs; records expenses in ARS/USD; and displays income, expenses, and balance statistics.",
+    "projects.salamone":
+      "Website for Bazar Salamone, developed together with another programmer. It includes a home goods catalog, offers and new arrivals, user accounts, and an administration panel to manage the catalog.",
+    "projects.production": "In production",
+    "projects.salamoneTeam": "Team of 2 developers",
+    "projects.features": "Features",
+    "projects.salamoneCatalog":
+      "Catalog organized by category, with sorting by name or price and pagination.",
+    "projects.salamoneProducts":
+      "Product pages with a gallery, description, characteristics, prices, and availability.",
+    "projects.salamoneAccounts": "Registration, sign-in, and user profiles.",
+    "projects.salamoneAdmin":
+      "Restricted-access panel to manage products, prices, stock, categories, and images.",
+    "projects.salamoneStock": "Published product counts and low-stock alerts.",
+    "projects.salamoneCompany": "Company information, store locations, and contact links.",
+    "projects.tools": "Technologies and tools",
+    "projects.privateCode": "Private code",
     "projects.visit": "Visit website",
     "projects.code": "View code",
     "projects.future": "Upcoming project",
@@ -84,6 +100,22 @@ export const translations = {
       "Plataforma de turismo con catálogo de viajes, programas en PDF, galería, testimonios y consultas por WhatsApp.",
     "projects.stgAdmin":
       "Su panel de administración con acceso autenticado permite gestionar viajes, fotos y comentarios; emitir recibos y cotizaciones en PDF; registrar egresos en ARS/USD y consultar estadísticas de ingresos, egresos y saldo.",
+    "projects.salamone":
+      "Sitio web para Bazar Salamone, desarrollado en conjunto con otro programador. Cuenta con un catálogo de productos para el hogar, secciones de ofertas y novedades, cuentas de usuario y un panel de administración para gestionar el catálogo.",
+    "projects.production": "En producción",
+    "projects.salamoneTeam": "Equipo de 2 desarrolladores",
+    "projects.features": "Funcionalidades",
+    "projects.salamoneCatalog":
+      "Catálogo por categorías, ordenamiento por nombre o precio y paginación.",
+    "projects.salamoneProducts":
+      "Fichas de productos con galería, descripción, características, precios y disponibilidad.",
+    "projects.salamoneAccounts": "Registro, inicio de sesión y perfil de usuario.",
+    "projects.salamoneAdmin":
+      "Panel con acceso restringido para administrar productos, precios, stock, categorías e imágenes.",
+    "projects.salamoneStock": "Indicadores de productos publicados y alertas de stock bajo.",
+    "projects.salamoneCompany": "Información de la empresa, sucursales y enlaces de contacto.",
+    "projects.tools": "Tecnologías y herramientas",
+    "projects.privateCode": "Código privado",
     "projects.visit": "Visitar sitio",
     "projects.code": "Ver código",
     "projects.future": "Próximo proyecto",
