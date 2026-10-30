@@ -1,3 +1,4 @@
+import { isIshaRevealed, renderIshaInteraction } from "./isha-interaction.js";
 import ToxicAtmosphere from "./toxic-atmosphere.js";
 
 const assetRoot = "assets/arcane/";
@@ -123,6 +124,12 @@ export function renderArcaneTheme(dark) {
   const atmosphere = document.getElementById("page-atmosphere");
   const hero = document.getElementById("hero-scene");
   const technologies = document.getElementById("technology-scene");
+  const skillTheme = dark ? "hextech" : "piltover";
+  for (const icon of document.querySelectorAll("[data-skill-icon]")) {
+    const file = icon.dataset.skillIcon;
+    icon.src = `assets/skills/${skillTheme}/${file}.webp`;
+  }
+
   // Mount only the active scene; hidden themes never request their heavy art.
   if (dark) {
     // One continuous background: the supplied particles on Home/Education,
@@ -146,9 +153,20 @@ export function renderArcaneTheme(dark) {
   if (hero) {
     const scene = decoration(dark ? "zaun-scene" : "piltover-scene");
     if (dark) {
-      const sign = decoration("last-drop-fixture");
+      const revealed = isIshaRevealed();
+      const sign = decoration(
+        revealed ? "last-drop-fixture last-drop-fixture--revealed" : "last-drop-fixture",
+      );
       sign.append(
-        sceneImage("last-drop", "last-drop-sign", { lazy: false, width: 960, height: 753 }),
+        sceneImage(
+          revealed ? "isha-jinx" : "last-drop",
+          revealed ? "isha-reveal" : "last-drop-sign",
+          {
+            lazy: false,
+            width: revealed ? 640 : 960,
+            height: revealed ? 960 : 753,
+          },
+        ),
       );
       scene.append(
         decoration("zaun-wall"),
@@ -173,6 +191,7 @@ export function renderArcaneTheme(dark) {
       );
     }
     hero.replaceChildren(scene);
+    renderIshaInteraction(dark);
   }
 
   if (technologies) {

@@ -34,6 +34,8 @@ tema activo, conservando los botones y enlaces nativos y las preferencias existe
 
 - Inicio: cartel de The Last Drop como imagen principal, arma de Jinx pequeña abajo
   a la derecha y grafitis en Zaun; nubes pintadas y dos dirigibles en Piltover.
+  En Zaun, Isha tiene cuatro poses pequeñas que cambian de lugar al tocarlas; el
+  cuarto toque reemplaza el cartel por Isha y Jinx. La secuencia se reinicia al recargar.
 - Sobre mí: avatar urbano o elegante, dentro del mismo espacio de 256 × 223 px.
 - Educación: Heimerdinger en modo claro.
 - Tecnologías, dentro de Educación: Viktor con dos seguidores tenues en modo oscuro.
