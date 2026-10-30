@@ -1,0 +1,96 @@
+/* Exact atmosphere values from the interactive Zaun demo. */
+.zaun-atmosphere {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  isolation: isolate;
+  pointer-events: none;
+  z-index: 0;
+}
+.zaun-atmosphere__city {
+  position: absolute;
+  inset: 0;
+  z-index: -5;
+  background:
+    radial-gradient(ellipse at 50% 95%, #68751e38, transparent 70%),
+    radial-gradient(ellipse at 16% 15%, #55307544, transparent 65%),
+    linear-gradient(180deg, #08090d, #121719);
+}
+.zaun-atmosphere__city--skyline::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 65%;
+  opacity: .5;
+  background: repeating-linear-gradient(90deg, transparent 0 11%, #060809 11% 14%, transparent 14% 21%, #060809 21% 24%);
+  clip-path: polygon(0 55%,8% 55%,8% 31%,13% 31%,13% 65%,23% 65%,23% 12%,27% 12%,27% 49%,33% 49%,33% 34%,38% 34%,38% 74%,47% 74%,47% 18%,52% 18%,52% 46%,61% 46%,61% 67%,68% 67%,68% 25%,72% 25%,72% 55%,82% 55%,82% 8%,87% 8%,87% 65%,100% 65%,100% 100%,0 100%);
+}
+.zaun-atmosphere__fog {
+  position: absolute;
+  width: 110%;
+  height: 60%;
+  border-radius: 50%;
+  filter: blur(39px);
+  pointer-events: none;
+  mix-blend-mode: screen;
+  animation: zaun-drift 17s ease-in-out infinite alternate;
+  opacity: calc(var(--zaun-fog-strength, .65) * .8);
+  will-change: transform;
+}
+.zaun-atmosphere__fog--a {
+  bottom: -25%;left: -35%;
+  background: radial-gradient(ellipse, #91a93499 0%, #407b3466 35%, transparent 70%);
+}
+.zaun-atmosphere__fog--b {
+  top: 10%;right: -45%;
+  background: radial-gradient(ellipse, #483d9b99, #325b644d 45%, transparent 73%);
+  animation-duration: 23s;
+  animation-direction: alternate-reverse;
+}
+.zaun-atmosphere__fog--c {
+  bottom: -14%;right: -39%;
+  background: radial-gradient(ellipse, #8cab4088, #77732b33 48%, transparent 72%);
+  animation-duration: 13s;
+}
+.zaun-atmosphere__fog--d {
+  top: 30%;left: -25%;
+  background: radial-gradient(ellipse, #565e3377, transparent 67%);
+  animation-duration: 27s;
+  animation-direction: alternate-reverse;
+}
+@keyframes zaun-drift {
+  from {transform: translate(-9%, 4%) rotate(-7deg) scale(.92)}
+  to {transform: translate(15%, -20%) rotate(10deg) scale(1.2)}
+}
+.zaun-atmosphere__dust { position: absolute;inset: 0;opacity: var(--zaun-dust-strength, .7);pointer-events: none; }
+.zaun-atmosphere__mote {
+  position: absolute;
+  width: var(--zaun-size);
+  height: var(--zaun-size);
+  left: var(--zaun-x);
+  top: var(--zaun-y);
+  border-radius: 50%;
+  background: #b7ed66;
+  box-shadow: 0 0 8px #8ce43f;
+  animation: zaun-float var(--zaun-duration) linear infinite;
+  animation-delay: var(--zaun-delay);
+}
+@keyframes zaun-float {
+  0% {transform: translate(0,35px);opacity: 0}
+  20% {opacity: .75}
+  80% {opacity: .55}
+  100% {transform: translate(18px,-95px);opacity: 0}
+}
+.zaun-atmosphere__vignette {
+  position: absolute;inset: 0;pointer-events: none;
+  background: radial-gradient(ellipse at center,transparent 25%,#020507b8 100%);
+  z-index: 4;
+}
+@media (max-width: 640px) {
+  .zaun-atmosphere__mote:nth-child(n+19) {display:none}
+}
+@media (prefers-reduced-motion: reduce) {
+  .zaun-atmosphere__fog,.zaun-atmosphere__mote {animation: none;will-change:auto}
+}

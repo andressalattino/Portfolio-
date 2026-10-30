@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="crown" viewBox="0 0 120 100">
+    <g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m14 73-5-48 30 21L58 9l20 35 33-23-12 51-85 1m7 14 73-3M9 28l6 38m87-37-8 36"/>
+      <path d="m27 59 11 4m17-17 2 12m24-3 8-5" stroke-width="2"/>
+    </g>
+  </symbol>
+  <symbol id="monkey" viewBox="0 0 120 110">
+    <g fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M30 48C1 21-2 74 27 73M89 45c30-27 39 30 6 29M28 48c-1-34 67-34 67 4l-4 32c-17 24-62 15-65-4l2-32Z"/>
+      <path d="m35 39 17 9m15 0 16-12M41 55l10 10-11 6m36-17-10 12 11 5M34 80c16 10 38 10 53-1m-31-4 6 1m-4 0 4-1M36 27 32 13l18 12M76 25l9-14 2 19"/>
+    </g>
+  </symbol>
+  <symbol id="boom" viewBox="0 0 180 100">
+    <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m5 66 12-8-8-20 21 6 1-25 18 10L67 6l10 21 30-14-3 16 32-3-8 20 43 8-29 16 18 13-37-1-10 14-25-13-25 10-8-14-28 5 2-12-24-1Z" opacity=".55"/>
+      <g stroke-width="4" transform="rotate(-8 90 50)">
+        <path d="M34 72V35h12c17 1 15 15 3 17 18 0 15 19-2 20H34Zm0-20h13M72 37c-15-3-19 36-3 37 17 1 20-36 3-37ZM101 38c-16-3-19 35-3 36 16 1 20-36 3-36Zm18 36 3-37 11 23 13-23 2 37m12-33-1 20m-1 9v3"/>
+      </g>
+    </g>
+  </symbol>
+  <symbol id="star" viewBox="0 0 100 100">
+    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m52 7 8 31 31-2-25 21 11 32-27-20-26 17 7-30L7 40l32-2L52 7Zm-9 27 8-17 3 23 25-1-20 14 8 23-18-13-17 11 4-22-19-9 25-1"/>
+    </g>
+  </symbol>
+  <symbol id="arrow" viewBox="0 0 150 120">
+    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m8 87 65-35 9 24 55-58m-48 5 51-9-6 49M13 100l57-32 5 16 48-49M6 17l17 20M24 16 7 36m108 65 23 5m-10-15-4 26"/>
+    </g>
+  </symbol>
+  <symbol id="marks" viewBox="0 0 80 60">
+    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
+      <path d="m9 45 14-30m2 34 13-26m13 18 17 9m-10-21 13 7"/>
+    </g>
+  </symbol>
+  <symbol id="hex-sparks" viewBox="0 0 150 100">
+    <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m22 68-12-9 9-10L3 29l22 8-5-18 17 10M118 31l14 9-8 13 20 18-21-5 5 18-17-10M37 11v8m-4-4h8m72 71v6m-3-3h6"/>
+    </g>
+  </symbol>
+</svg>

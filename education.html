@@ -6,11 +6,11 @@
     <!-- Critical preferences run before styles, external resources, and the first paint. -->
     <style>
     html {
-      background-color: #f3f4f6;
+      background-color: #c8d6d7;
       color-scheme: light;
     }
     html.dark {
-      background-color: #111827;
+      background-color: #11101b;
       color-scheme: dark;
     }
     html[data-preferences-pending] body {
@@ -50,438 +50,512 @@
     </script>
     <title data-i18n="title.education">Andres Salattino | Education</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&amp;family=Inter:wght@300;400;500;600;700&amp;family=Lora:ital,wght@1,400&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap"
       rel="stylesheet"
     >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="src/js/tailwind-config.js"></script>
     <link href="src/Styles.css" rel="stylesheet">
+    <link href="assets/arcane/zaun-atmosphere/ToxicAtmosphere.css" rel="stylesheet">
     <link rel="modulepreload" href="src/js/translations.js">
     <script type="module" src="app.js"></script>
   </head>
-  <body class="bg-gray-100 flex flex-col min-h-screen font-sans dark:bg-gray-900 dark:text-white">
+  <body class="arcane-page arcane-page--education">
+    <div id="page-atmosphere" class="page-atmosphere" aria-hidden="true"></div>
     <a href="#main-content" class="skip-link"><span data-i18n="skip">Skip to content</span></a>
-    <header
-      class="w-full bg-zinc-200 shadow-md p-4 flex items-center justify-between gap-3 dark:bg-zinc-800"
-    >
-      <a href="index.html" data-i18n-aria="nav.home" aria-label="Home"
-        ><img src="img/logo_asd-removebg-preview.png" alt="Andres Salattino" class="h-12"></a
-      >
-      <div class="flex items-center gap-3 lg:gap-6">
-        <nav class="hidden lg:flex gap-6 font-semibold">
-          <a href="about.html" class="hover:text-blue-500 "
-            ><span data-i18n="nav.about">About me</span></a
-          >
-          <a href="projects.html" class="hover:text-blue-500 "
-            ><span data-i18n="nav.projects">Projects</span></a
-          >
-          <a href="contact.html" class="hover:text-blue-500 "
-            ><span data-i18n="nav.contact">Contact me</span></a
-          >
-          <a href="education.html" aria-current="page" class="hover:text-blue-500 "
+    <header class="site-header">
+      <a href="index.html" class="brand" data-i18n-aria="nav.home" aria-label="Home">
+        <span class="brand-mark" aria-hidden="true">AS</span>
+        <span class="brand-caption">Andres<br>Salattino</span>
+      </a>
+      <div class="header-controls">
+        <nav class="desktop-nav" data-i18n-aria="menu.toggle" aria-label="Navigation menu">
+          <a href="index.html"><span data-i18n="nav.home">Home</span></a
+          ><a href="about.html"><span data-i18n="nav.about">About me</span></a
+          ><a href="projects.html"><span data-i18n="nav.projects">Projects</span></a
+          ><a href="education.html" aria-current="page"
             ><span data-i18n="nav.education">Education</span></a
-          >
+          ><a href="contact.html"><span data-i18n="nav.contact">Contact me</span></a>
         </nav>
-        <div class="flex flex-col gap-1">
-          <label for="language-select" class="text-xs"
-            ><span data-i18n="language.label">Language</span></label
-          >
-          <select
-            id="language-select"
-            class="rounded-md border border-gray-400 bg-white px-2 py-1 text-sm text-gray-900 dark:bg-zinc-900 dark:text-white"
-          >
-            <option value="en" lang="en">English</option>
-            <option value="es" lang="es">Español</option>
+        <div class="language-control">
+          <label for="language-select" data-i18n="language.label">Language</label>
+          <select id="language-select">
+            <option value="en" lang="en">EN</option>
+            <option value="es" lang="es">ES</option>
           </select>
         </div>
         <button
           id="theme-toggle"
           type="button"
+          class="theme-toggle"
           data-i18n-aria="theme.toggle"
-          aria-label="Toggle dark mode"
+          aria-label="Switch between Piltover and Zaun"
           aria-pressed="false"
-          class="p-2 rounded-md"
         >
-          <svg width="28" height="28" aria-hidden="true">
+          <svg width="18" height="18" aria-hidden="true">
             <use href="assets/sprites.svg#sun"></use>
           </svg>
+          <span class="theme-name--light" aria-hidden="true">Piltover</span
+          ><span class="theme-name--dark" aria-hidden="true">Zaun</span>
         </button>
         <button
           id="menu-toggle"
           type="button"
+          class="menu-toggle"
           data-i18n-aria="menu.toggle"
           aria-label="Navigation menu"
           aria-controls="mobile-menu"
           aria-expanded="false"
-          class="lg:hidden p-2 rounded-md"
         >
-          <svg width="28" height="28" aria-hidden="true">
+          <svg width="24" height="24" aria-hidden="true">
             <use href="assets/sprites.svg#icono-nav"></use>
           </svg>
         </button>
       </div>
     </header>
-    <nav
-      id="mobile-menu"
-      hidden
-      class="lg:hidden bg-zinc-200 dark:bg-zinc-800 text-center font-semibold p-4"
-    >
-      <a href="about.html" class="hover:text-blue-500 block py-2"
-        ><span data-i18n="nav.about">About me</span></a
-      >
-      <a href="projects.html" class="hover:text-blue-500 block py-2"
-        ><span data-i18n="nav.projects">Projects</span></a
-      >
-      <a href="contact.html" class="hover:text-blue-500 block py-2"
-        ><span data-i18n="nav.contact">Contact me</span></a
-      >
-      <a href="education.html" aria-current="page" class="hover:text-blue-500 block py-2"
+    <nav id="mobile-menu" hidden data-i18n-aria="menu.toggle" aria-label="Navigation menu">
+      <a href="index.html"><span data-i18n="nav.home">Home</span></a
+      ><a href="about.html"><span data-i18n="nav.about">About me</span></a
+      ><a href="projects.html"><span data-i18n="nav.projects">Projects</span></a
+      ><a href="education.html" aria-current="page"
         ><span data-i18n="nav.education">Education</span></a
-      >
+      ><a href="contact.html"><span data-i18n="nav.contact">Contact me</span></a>
     </nav>
-    <main id="main-content" class="flex-1 flex flex-col items-center justify-center py-12 px-6">
-      <h1 class="text-4xl md:text-5xl font-bold mb-6 text-blue-600 dark:text-blue-400">
-        <span data-i18n="nav.education">Education</span>
-      </h1>
-      <p class="text-center max-w-2xl text-lg mb-10">
-        <span data-i18n="education.intro"
-          >2nd-year student of the University Technician in Programming program at the National
-          Technological University (UTN) – Mendoza.</span
-        >
-      </p>
-      <section class="w-full max-w-4xl mx-auto mt-10">
-        <h2 class="text-2xl font-semibold text-center mb-6 text-blue-600 dark:text-blue-400">
-          <span data-i18n="education.skills">My skills</span>
-        </h2>
-        <section class="skills-window" data-i18n-aria="education.skills" aria-label="My skills">
-          <div id="skills-carousel" class="animate-slide">
-            <div class="skills-group">
-              <div class="skill-item">
-                <img src="assets/skills/html5.svg" class="skill-icon" alt="" width="64" height="64">
-                <span>HTML</span>
+    <main id="main-content" class="education-main">
+      <section class="education-overview" aria-labelledby="education-title">
+        <div>
+          <p class="eyebrow" data-i18n="education.eyebrow">Learning to build what comes next</p>
+          <h1 id="education-title"><span data-i18n="nav.education">Education</span></h1>
+          <p>
+            <span data-i18n="education.intro"
+              >2nd-year student of the University Technician in Programming program at the National
+              Technological University (UTN) – Mendoza.</span
+            >
+          </p>
+        </div>
+        <div class="education-character" aria-hidden="true">
+          <img
+            data-theme-character
+            data-dark="ekko"
+            data-light="heimerdinger"
+            alt=""
+            width="260"
+            height="300"
+            decoding="async"
+          >
+        </div>
+      </section>
+      <section id="technologies" class="technologies" aria-labelledby="technology-title">
+        <div id="technology-scene" class="technology-scene" aria-hidden="true"></div>
+        <div class="technology-heading">
+          <span class="section-number" aria-hidden="true">02 /</span>
+          <h2 id="technology-title">
+            <span data-i18n="education.skills">My skills</span>
+          </h2>
+        </div>
+        <div class="skills-content">
+          <section class="skills-window" data-i18n-aria="education.skills" aria-label="My skills">
+            <div id="skills-carousel" class="animate-slide">
+              <div class="skills-group">
+                <div class="skill-item">
+                  <img
+                    src="assets/skills/html5.svg"
+                    class="skill-icon"
+                    alt=""
+                    width="64"
+                    height="64"
+                  >
+                  <span>HTML</span>
+                </div>
+                <div class="skill-item">
+                  <img
+                    src="assets/skills/css3.svg"
+                    class="skill-icon"
+                    alt=""
+                    width="64"
+                    height="64"
+                  >
+                  <span>CSS</span>
+                </div>
+                <div class="skill-item">
+                  <img
+                    src="assets/skills/javascript.svg"
+                    class="skill-icon"
+                    alt=""
+                    width="64"
+                    height="64"
+                  >
+                  <span>JavaScript</span>
+                </div>
+                <div class="skill-item">
+                  <img
+                    src="assets/skills/java.svg"
+                    class="skill-icon"
+                    alt=""
+                    width="64"
+                    height="64"
+                  >
+                  <span>Java</span>
+                </div>
+                <div class="skill-item">
+                  <img
+                    src="assets/skills/python.svg"
+                    class="skill-icon"
+                    alt=""
+                    width="64"
+                    height="64"
+                  >
+                  <span>Python</span>
+                </div>
+                <div class="skill-item">
+                  <img
+                    src="assets/skills/react.svg"
+                    class="skill-icon"
+                    alt=""
+                    width="64"
+                    height="64"
+                  >
+                  <span>React</span>
+                </div>
+                <div class="skill-item">
+                  <img
+                    src="assets/skills/reactrouter.svg"
+                    class="skill-icon"
+                    alt=""
+                    width="64"
+                    height="64"
+                  >
+                  <span>React Router</span>
+                </div>
+                <div class="skill-item">
+                  <img
+                    src="assets/skills/nextjs.svg"
+                    class="skill-icon skill-monochrome"
+                    alt=""
+                    width="64"
+                    height="64"
+                  >
+                  <span>Next.js</span>
+                </div>
+                <div class="skill-item">
+                  <img
+                    src="assets/skills/typescript.svg"
+                    class="skill-icon"
+                    alt=""
+                    width="64"
+                    height="64"
+                  >
+                  <span>TypeScript</span>
+                </div>
+                <div class="skill-item">
+                  <img
+                    src="assets/skills/tailwindcss.svg"
+                    class="skill-icon"
+                    alt=""
+                    width="64"
+                    height="64"
+                  >
+                  <span>Tailwind CSS</span>
+                </div>
+                <div class="skill-item">
+                  <img
+                    src="assets/skills/vitejs.svg"
+                    class="skill-icon"
+                    alt=""
+                    width="64"
+                    height="64"
+                  >
+                  <span>Vite</span>
+                </div>
+                <div class="skill-item">
+                  <img
+                    src="assets/skills/nodejs.svg"
+                    class="skill-icon"
+                    alt=""
+                    width="64"
+                    height="64"
+                  >
+                  <span>Node.js</span>
+                </div>
+                <div class="skill-item">
+                  <img
+                    src="assets/skills/cloudflare.svg"
+                    class="skill-icon"
+                    alt=""
+                    width="64"
+                    height="64"
+                  >
+                  <span>Cloudflare</span>
+                </div>
+                <div class="skill-item">
+                  <img
+                    src="assets/skills/supabase.svg"
+                    class="skill-icon"
+                    alt=""
+                    width="64"
+                    height="64"
+                  >
+                  <span>Supabase</span>
+                </div>
+                <div class="skill-item">
+                  <img
+                    src="assets/skills/postgresql.svg"
+                    class="skill-icon"
+                    alt=""
+                    width="64"
+                    height="64"
+                  >
+                  <span>PostgreSQL</span>
+                </div>
+                <div class="skill-item">
+                  <img
+                    src="assets/skills/drizzle.svg"
+                    class="skill-icon"
+                    alt=""
+                    width="64"
+                    height="64"
+                  >
+                  <span>Drizzle ORM</span>
+                </div>
+                <div class="skill-item">
+                  <img
+                    src="assets/skills/biome.svg"
+                    class="skill-icon"
+                    alt=""
+                    width="64"
+                    height="64"
+                  >
+                  <span>Biome</span>
+                </div>
+                <div class="skill-item">
+                  <img
+                    src="assets/skills/chartdotjs.svg"
+                    class="skill-icon"
+                    alt=""
+                    width="64"
+                    height="64"
+                  >
+                  <span>Chart.js</span>
+                </div>
+                <div class="skill-item">
+                  <img
+                    src="assets/skills/vercel.svg"
+                    class="skill-icon skill-monochrome"
+                    alt=""
+                    width="64"
+                    height="64"
+                  >
+                  <span>Vercel</span>
+                </div>
               </div>
-              <div class="skill-item">
-                <img src="assets/skills/css3.svg" class="skill-icon" alt="" width="64" height="64">
-                <span>CSS</span>
-              </div>
-              <div class="skill-item">
-                <img
-                  src="assets/skills/javascript.svg"
-                  class="skill-icon"
-                  alt=""
-                  width="64"
-                  height="64"
-                >
-                <span>JavaScript</span>
-              </div>
-              <div class="skill-item">
-                <img src="assets/skills/java.svg" class="skill-icon" alt="" width="64" height="64">
-                <span>Java</span>
-              </div>
-              <div class="skill-item">
-                <img
-                  src="assets/skills/python.svg"
-                  class="skill-icon"
-                  alt=""
-                  width="64"
-                  height="64"
-                >
-                <span>Python</span>
-              </div>
-              <div class="skill-item">
-                <img src="assets/skills/react.svg" class="skill-icon" alt="" width="64" height="64">
-                <span>React</span>
-              </div>
-              <div class="skill-item">
-                <img
-                  src="assets/skills/reactrouter.svg"
-                  class="skill-icon"
-                  alt=""
-                  width="64"
-                  height="64"
-                >
-                <span>React Router</span>
-              </div>
-              <div class="skill-item">
-                <img
-                  src="assets/skills/nextjs.svg"
-                  class="skill-icon skill-monochrome"
-                  alt=""
-                  width="64"
-                  height="64"
-                >
-                <span>Next.js</span>
-              </div>
-              <div class="skill-item">
-                <img
-                  src="assets/skills/typescript.svg"
-                  class="skill-icon"
-                  alt=""
-                  width="64"
-                  height="64"
-                >
-                <span>TypeScript</span>
-              </div>
-              <div class="skill-item">
-                <img
-                  src="assets/skills/tailwindcss.svg"
-                  class="skill-icon"
-                  alt=""
-                  width="64"
-                  height="64"
-                >
-                <span>Tailwind CSS</span>
-              </div>
-              <div class="skill-item">
-                <img
-                  src="assets/skills/vitejs.svg"
-                  class="skill-icon"
-                  alt=""
-                  width="64"
-                  height="64"
-                >
-                <span>Vite</span>
-              </div>
-              <div class="skill-item">
-                <img
-                  src="assets/skills/nodejs.svg"
-                  class="skill-icon"
-                  alt=""
-                  width="64"
-                  height="64"
-                >
-                <span>Node.js</span>
-              </div>
-              <div class="skill-item">
-                <img
-                  src="assets/skills/cloudflare.svg"
-                  class="skill-icon"
-                  alt=""
-                  width="64"
-                  height="64"
-                >
-                <span>Cloudflare</span>
-              </div>
-              <div class="skill-item">
-                <img
-                  src="assets/skills/supabase.svg"
-                  class="skill-icon"
-                  alt=""
-                  width="64"
-                  height="64"
-                >
-                <span>Supabase</span>
-              </div>
-              <div class="skill-item">
-                <img
-                  src="assets/skills/postgresql.svg"
-                  class="skill-icon"
-                  alt=""
-                  width="64"
-                  height="64"
-                >
-                <span>PostgreSQL</span>
-              </div>
-              <div class="skill-item">
-                <img
-                  src="assets/skills/drizzle.svg"
-                  class="skill-icon"
-                  alt=""
-                  width="64"
-                  height="64"
-                >
-                <span>Drizzle ORM</span>
-              </div>
-              <div class="skill-item">
-                <img src="assets/skills/biome.svg" class="skill-icon" alt="" width="64" height="64">
-                <span>Biome</span>
-              </div>
-              <div class="skill-item">
-                <img
-                  src="assets/skills/chartdotjs.svg"
-                  class="skill-icon"
-                  alt=""
-                  width="64"
-                  height="64"
-                >
-                <span>Chart.js</span>
-              </div>
-              <div class="skill-item">
-                <img
-                  src="assets/skills/vercel.svg"
-                  class="skill-icon skill-monochrome"
-                  alt=""
-                  width="64"
-                  height="64"
-                >
-                <span>Vercel</span>
+              <div class="skills-group" aria-hidden="true">
+                <div class="skill-item">
+                  <img
+                    src="assets/skills/html5.svg"
+                    class="skill-icon"
+                    alt=""
+                    width="64"
+                    height="64"
+                  >
+                  <span>HTML</span>
+                </div>
+                <div class="skill-item">
+                  <img
+                    src="assets/skills/css3.svg"
+                    class="skill-icon"
+                    alt=""
+                    width="64"
+                    height="64"
+                  >
+                  <span>CSS</span>
+                </div>
+                <div class="skill-item">
+                  <img
+                    src="assets/skills/javascript.svg"
+                    class="skill-icon"
+                    alt=""
+                    width="64"
+                    height="64"
+                  >
+                  <span>JavaScript</span>
+                </div>
+                <div class="skill-item">
+                  <img
+                    src="assets/skills/java.svg"
+                    class="skill-icon"
+                    alt=""
+                    width="64"
+                    height="64"
+                  >
+                  <span>Java</span>
+                </div>
+                <div class="skill-item">
+                  <img
+                    src="assets/skills/python.svg"
+                    class="skill-icon"
+                    alt=""
+                    width="64"
+                    height="64"
+                  >
+                  <span>Python</span>
+                </div>
+                <div class="skill-item">
+                  <img
+                    src="assets/skills/react.svg"
+                    class="skill-icon"
+                    alt=""
+                    width="64"
+                    height="64"
+                  >
+                  <span>React</span>
+                </div>
+                <div class="skill-item">
+                  <img
+                    src="assets/skills/reactrouter.svg"
+                    class="skill-icon"
+                    alt=""
+                    width="64"
+                    height="64"
+                  >
+                  <span>React Router</span>
+                </div>
+                <div class="skill-item">
+                  <img
+                    src="assets/skills/nextjs.svg"
+                    class="skill-icon skill-monochrome"
+                    alt=""
+                    width="64"
+                    height="64"
+                  >
+                  <span>Next.js</span>
+                </div>
+                <div class="skill-item">
+                  <img
+                    src="assets/skills/typescript.svg"
+                    class="skill-icon"
+                    alt=""
+                    width="64"
+                    height="64"
+                  >
+                  <span>TypeScript</span>
+                </div>
+                <div class="skill-item">
+                  <img
+                    src="assets/skills/tailwindcss.svg"
+                    class="skill-icon"
+                    alt=""
+                    width="64"
+                    height="64"
+                  >
+                  <span>Tailwind CSS</span>
+                </div>
+                <div class="skill-item">
+                  <img
+                    src="assets/skills/vitejs.svg"
+                    class="skill-icon"
+                    alt=""
+                    width="64"
+                    height="64"
+                  >
+                  <span>Vite</span>
+                </div>
+                <div class="skill-item">
+                  <img
+                    src="assets/skills/nodejs.svg"
+                    class="skill-icon"
+                    alt=""
+                    width="64"
+                    height="64"
+                  >
+                  <span>Node.js</span>
+                </div>
+                <div class="skill-item">
+                  <img
+                    src="assets/skills/cloudflare.svg"
+                    class="skill-icon"
+                    alt=""
+                    width="64"
+                    height="64"
+                  >
+                  <span>Cloudflare</span>
+                </div>
+                <div class="skill-item">
+                  <img
+                    src="assets/skills/supabase.svg"
+                    class="skill-icon"
+                    alt=""
+                    width="64"
+                    height="64"
+                  >
+                  <span>Supabase</span>
+                </div>
+                <div class="skill-item">
+                  <img
+                    src="assets/skills/postgresql.svg"
+                    class="skill-icon"
+                    alt=""
+                    width="64"
+                    height="64"
+                  >
+                  <span>PostgreSQL</span>
+                </div>
+                <div class="skill-item">
+                  <img
+                    src="assets/skills/drizzle.svg"
+                    class="skill-icon"
+                    alt=""
+                    width="64"
+                    height="64"
+                  >
+                  <span>Drizzle ORM</span>
+                </div>
+                <div class="skill-item">
+                  <img
+                    src="assets/skills/biome.svg"
+                    class="skill-icon"
+                    alt=""
+                    width="64"
+                    height="64"
+                  >
+                  <span>Biome</span>
+                </div>
+                <div class="skill-item">
+                  <img
+                    src="assets/skills/chartdotjs.svg"
+                    class="skill-icon"
+                    alt=""
+                    width="64"
+                    height="64"
+                  >
+                  <span>Chart.js</span>
+                </div>
+                <div class="skill-item">
+                  <img
+                    src="assets/skills/vercel.svg"
+                    class="skill-icon skill-monochrome"
+                    alt=""
+                    width="64"
+                    height="64"
+                  >
+                  <span>Vercel</span>
+                </div>
               </div>
             </div>
-            <div class="skills-group" aria-hidden="true">
-              <div class="skill-item">
-                <img src="assets/skills/html5.svg" class="skill-icon" alt="" width="64" height="64">
-                <span>HTML</span>
-              </div>
-              <div class="skill-item">
-                <img src="assets/skills/css3.svg" class="skill-icon" alt="" width="64" height="64">
-                <span>CSS</span>
-              </div>
-              <div class="skill-item">
-                <img
-                  src="assets/skills/javascript.svg"
-                  class="skill-icon"
-                  alt=""
-                  width="64"
-                  height="64"
-                >
-                <span>JavaScript</span>
-              </div>
-              <div class="skill-item">
-                <img src="assets/skills/java.svg" class="skill-icon" alt="" width="64" height="64">
-                <span>Java</span>
-              </div>
-              <div class="skill-item">
-                <img
-                  src="assets/skills/python.svg"
-                  class="skill-icon"
-                  alt=""
-                  width="64"
-                  height="64"
-                >
-                <span>Python</span>
-              </div>
-              <div class="skill-item">
-                <img src="assets/skills/react.svg" class="skill-icon" alt="" width="64" height="64">
-                <span>React</span>
-              </div>
-              <div class="skill-item">
-                <img
-                  src="assets/skills/reactrouter.svg"
-                  class="skill-icon"
-                  alt=""
-                  width="64"
-                  height="64"
-                >
-                <span>React Router</span>
-              </div>
-              <div class="skill-item">
-                <img
-                  src="assets/skills/nextjs.svg"
-                  class="skill-icon skill-monochrome"
-                  alt=""
-                  width="64"
-                  height="64"
-                >
-                <span>Next.js</span>
-              </div>
-              <div class="skill-item">
-                <img
-                  src="assets/skills/typescript.svg"
-                  class="skill-icon"
-                  alt=""
-                  width="64"
-                  height="64"
-                >
-                <span>TypeScript</span>
-              </div>
-              <div class="skill-item">
-                <img
-                  src="assets/skills/tailwindcss.svg"
-                  class="skill-icon"
-                  alt=""
-                  width="64"
-                  height="64"
-                >
-                <span>Tailwind CSS</span>
-              </div>
-              <div class="skill-item">
-                <img
-                  src="assets/skills/vitejs.svg"
-                  class="skill-icon"
-                  alt=""
-                  width="64"
-                  height="64"
-                >
-                <span>Vite</span>
-              </div>
-              <div class="skill-item">
-                <img
-                  src="assets/skills/nodejs.svg"
-                  class="skill-icon"
-                  alt=""
-                  width="64"
-                  height="64"
-                >
-                <span>Node.js</span>
-              </div>
-              <div class="skill-item">
-                <img
-                  src="assets/skills/cloudflare.svg"
-                  class="skill-icon"
-                  alt=""
-                  width="64"
-                  height="64"
-                >
-                <span>Cloudflare</span>
-              </div>
-              <div class="skill-item">
-                <img
-                  src="assets/skills/supabase.svg"
-                  class="skill-icon"
-                  alt=""
-                  width="64"
-                  height="64"
-                >
-                <span>Supabase</span>
-              </div>
-              <div class="skill-item">
-                <img
-                  src="assets/skills/postgresql.svg"
-                  class="skill-icon"
-                  alt=""
-                  width="64"
-                  height="64"
-                >
-                <span>PostgreSQL</span>
-              </div>
-              <div class="skill-item">
-                <img
-                  src="assets/skills/drizzle.svg"
-                  class="skill-icon"
-                  alt=""
-                  width="64"
-                  height="64"
-                >
-                <span>Drizzle ORM</span>
-              </div>
-              <div class="skill-item">
-                <img src="assets/skills/biome.svg" class="skill-icon" alt="" width="64" height="64">
-                <span>Biome</span>
-              </div>
-              <div class="skill-item">
-                <img
-                  src="assets/skills/chartdotjs.svg"
-                  class="skill-icon"
-                  alt=""
-                  width="64"
-                  height="64"
-                >
-                <span>Chart.js</span>
-              </div>
-              <div class="skill-item">
-                <img
-                  src="assets/skills/vercel.svg"
-                  class="skill-icon skill-monochrome"
-                  alt=""
-                  width="64"
-                  height="64"
-                >
-                <span>Vercel</span>
-              </div>
-            </div>
-          </div>
-        </section>
+          </section>
+          <p class="skills-note" data-i18n="education.tools">
+            Technologies &amp; tools / Always evolving
+          </p>
+        </div>
       </section>
     </main>
+    <footer class="site-footer">
+      <span>Andres Salattino · Frontend Developer</span>
+      <span class="world-indicator"
+        ><span class="theme-name--light">Piltover / City of Progress</span
+        ><span class="theme-name--dark">Zaun / The Undercity</span></span
+      >
+    </footer>
   </body>
 </html>

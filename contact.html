@@ -6,11 +6,11 @@
     <!-- Critical preferences run before styles, external resources, and the first paint. -->
     <style>
     html {
-      background-color: #f3f4f6;
+      background-color: #c8d6d7;
       color-scheme: light;
     }
     html.dark {
-      background-color: #111827;
+      background-color: #11101b;
       color-scheme: dark;
     }
     html[data-preferences-pending] body {
@@ -50,105 +50,95 @@
     </script>
     <title data-i18n="title.contact">Andres Salattino | Contact me</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&amp;family=Inter:wght@300;400;500;600;700&amp;family=Lora:ital,wght@1,400&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap"
       rel="stylesheet"
     >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="src/js/tailwind-config.js"></script>
     <link href="src/Styles.css" rel="stylesheet">
     <link rel="modulepreload" href="src/js/translations.js">
     <script type="module" src="app.js"></script>
   </head>
-  <body class="bg-gray-100 flex flex-col min-h-screen font-sans dark:bg-gray-900 dark:text-white">
+  <body class="arcane-page arcane-page--contact">
+    <div id="page-atmosphere" class="page-atmosphere" aria-hidden="true"></div>
     <a href="#main-content" class="skip-link"><span data-i18n="skip">Skip to content</span></a>
-    <header
-      class="w-full bg-zinc-200 shadow-md p-4 flex items-center justify-between gap-3 dark:bg-zinc-800"
-    >
-      <a href="index.html" data-i18n-aria="nav.home" aria-label="Home"
-        ><img src="img/logo_asd-removebg-preview.png" alt="Andres Salattino" class="h-12"></a
-      >
-      <div class="flex items-center gap-3 lg:gap-6">
-        <nav class="hidden lg:flex gap-6 font-semibold">
-          <a href="about.html" class="hover:text-blue-500 "
-            ><span data-i18n="nav.about">About me</span></a
-          >
-          <a href="projects.html" class="hover:text-blue-500 "
-            ><span data-i18n="nav.projects">Projects</span></a
-          >
-          <a href="contact.html" aria-current="page" class="hover:text-blue-500 "
+    <header class="site-header">
+      <a href="index.html" class="brand" data-i18n-aria="nav.home" aria-label="Home">
+        <span class="brand-mark" aria-hidden="true">AS</span>
+        <span class="brand-caption">Andres<br>Salattino</span>
+      </a>
+      <div class="header-controls">
+        <nav class="desktop-nav" data-i18n-aria="menu.toggle" aria-label="Navigation menu">
+          <a href="index.html"><span data-i18n="nav.home">Home</span></a
+          ><a href="about.html"><span data-i18n="nav.about">About me</span></a
+          ><a href="projects.html"><span data-i18n="nav.projects">Projects</span></a
+          ><a href="education.html"><span data-i18n="nav.education">Education</span></a
+          ><a href="contact.html" aria-current="page"
             ><span data-i18n="nav.contact">Contact me</span></a
           >
-          <a href="education.html" class="hover:text-blue-500 "
-            ><span data-i18n="nav.education">Education</span></a
-          >
         </nav>
-        <div class="flex flex-col gap-1">
-          <label for="language-select" class="text-xs"
-            ><span data-i18n="language.label">Language</span></label
-          >
-          <select
-            id="language-select"
-            class="rounded-md border border-gray-400 bg-white px-2 py-1 text-sm text-gray-900 dark:bg-zinc-900 dark:text-white"
-          >
-            <option value="en" lang="en">English</option>
-            <option value="es" lang="es">Español</option>
+        <div class="language-control">
+          <label for="language-select" data-i18n="language.label">Language</label>
+          <select id="language-select">
+            <option value="en" lang="en">EN</option>
+            <option value="es" lang="es">ES</option>
           </select>
         </div>
         <button
           id="theme-toggle"
           type="button"
+          class="theme-toggle"
           data-i18n-aria="theme.toggle"
-          aria-label="Toggle dark mode"
+          aria-label="Switch between Piltover and Zaun"
           aria-pressed="false"
-          class="p-2 rounded-md"
         >
-          <svg width="28" height="28" aria-hidden="true">
+          <svg width="18" height="18" aria-hidden="true">
             <use href="assets/sprites.svg#sun"></use>
           </svg>
+          <span class="theme-name--light" aria-hidden="true">Piltover</span
+          ><span class="theme-name--dark" aria-hidden="true">Zaun</span>
         </button>
         <button
           id="menu-toggle"
           type="button"
+          class="menu-toggle"
           data-i18n-aria="menu.toggle"
           aria-label="Navigation menu"
           aria-controls="mobile-menu"
           aria-expanded="false"
-          class="lg:hidden p-2 rounded-md"
         >
-          <svg width="28" height="28" aria-hidden="true">
+          <svg width="24" height="24" aria-hidden="true">
             <use href="assets/sprites.svg#icono-nav"></use>
           </svg>
         </button>
       </div>
     </header>
-    <nav
-      id="mobile-menu"
-      hidden
-      class="lg:hidden bg-zinc-200 dark:bg-zinc-800 text-center font-semibold p-4"
-    >
-      <a href="about.html" class="hover:text-blue-500 block py-2"
-        ><span data-i18n="nav.about">About me</span></a
-      >
-      <a href="projects.html" class="hover:text-blue-500 block py-2"
-        ><span data-i18n="nav.projects">Projects</span></a
-      >
-      <a href="contact.html" aria-current="page" class="hover:text-blue-500 block py-2"
+    <nav id="mobile-menu" hidden data-i18n-aria="menu.toggle" aria-label="Navigation menu">
+      <a href="index.html"><span data-i18n="nav.home">Home</span></a
+      ><a href="about.html"><span data-i18n="nav.about">About me</span></a
+      ><a href="projects.html"><span data-i18n="nav.projects">Projects</span></a
+      ><a href="education.html"><span data-i18n="nav.education">Education</span></a
+      ><a href="contact.html" aria-current="page"
         ><span data-i18n="nav.contact">Contact me</span></a
       >
-      <a href="education.html" class="hover:text-blue-500 block py-2"
-        ><span data-i18n="nav.education">Education</span></a
-      >
     </nav>
-    <main id="main-content" class="flex flex-col items-center justify-center flex-1 px-6 py-12">
+    <main id="main-content" class="contact-main">
+      <p class="eyebrow" data-i18n="contact.eyebrow">Let’s build something together</p>
       <div class="flex items-center justify-center gap-8 mb-8">
-        <h1 class="text-4xl md:text-5xl font-bold mb-6 text-blue-600 dark:text-blue-400">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">
           <span data-i18n="nav.contact">Contact me</span>
         </h1>
         <img
-          src="img/avatar-celular.png"
-          data-i18n-alt="image.contact"
-          alt="Avatar holding a phone"
-          class="hidden md:block w-64 flex-shrink-0"
+          data-theme-character
+          data-dark="contact-jinx"
+          data-light="contact-vi"
+          alt=""
+          aria-hidden="true"
+          width="180"
+          height="200"
+          class="contact-character hidden md:block flex-shrink-0"
         >
       </div>
       <div class="text-center max-w-2xl mb-10 space-y-4 text-lg leading-relaxed">
@@ -160,9 +150,7 @@
         </p>
         <p>
           <span data-i18n="contact.email">You can email me at:</span>
-          <a
-            href="mailto:andresalattino@gmail.com"
-            class="text-blue-600 dark:text-blue-400 hover:underline break-words"
+          <a href="mailto:andresalattino@gmail.com" class="hover:underline break-words"
             >andresalattino@gmail.com</a
           >
         </p>
@@ -172,6 +160,9 @@
           >
         </p>
       </div>
+      <a href="mailto:andresalattino@gmail.com" class="arcane-button mb-10"
+        ><span data-i18n="contact.send">Send an email</span></a
+      >
       <div class="flex gap-6">
         <a
           href="https://github.com/andressalattino"
@@ -193,5 +184,12 @@
         >
       </div>
     </main>
+    <footer class="site-footer">
+      <span>Andres Salattino · Frontend Developer</span>
+      <span class="world-indicator"
+        ><span class="theme-name--light">Piltover / City of Progress</span
+        ><span class="theme-name--dark">Zaun / The Undercity</span></span
+      >
+    </footer>
   </body>
 </html>

@@ -6,11 +6,11 @@
     <!-- Critical preferences run before styles, external resources, and the first paint. -->
     <style>
     html {
-      background-color: #f3f4f6;
+      background-color: #c8d6d7;
       color-scheme: light;
     }
     html.dark {
-      background-color: #111827;
+      background-color: #11101b;
       color-scheme: dark;
     }
     html[data-preferences-pending] body {
@@ -50,108 +50,89 @@
     </script>
     <title data-i18n="title.projects">Andres Salattino | Projects</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&amp;family=Inter:wght@300;400;500;600;700&amp;family=Lora:ital,wght@1,400&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap"
       rel="stylesheet"
     >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="src/js/tailwind-config.js"></script>
     <link href="src/Styles.css" rel="stylesheet">
     <link rel="modulepreload" href="src/js/translations.js">
     <script type="module" src="app.js"></script>
   </head>
-  <body class="bg-gray-100 flex flex-col min-h-screen font-sans dark:bg-gray-900 dark:text-white">
+  <body class="arcane-page arcane-page--projects">
+    <div id="page-atmosphere" class="page-atmosphere" aria-hidden="true"></div>
     <a href="#main-content" class="skip-link"><span data-i18n="skip">Skip to content</span></a>
-    <header
-      class="w-full bg-zinc-200 shadow-md p-4 flex items-center justify-between gap-3 dark:bg-zinc-800"
-    >
-      <a href="index.html" data-i18n-aria="nav.home" aria-label="Home"
-        ><img src="img/logo_asd-removebg-preview.png" alt="Andres Salattino" class="h-12"></a
-      >
-      <div class="flex items-center gap-3 lg:gap-6">
-        <nav class="hidden lg:flex gap-6 font-semibold">
-          <a href="about.html" class="hover:text-blue-500 "
-            ><span data-i18n="nav.about">About me</span></a
-          >
-          <a href="projects.html" aria-current="page" class="hover:text-blue-500 "
+    <header class="site-header">
+      <a href="index.html" class="brand" data-i18n-aria="nav.home" aria-label="Home">
+        <span class="brand-mark" aria-hidden="true">AS</span>
+        <span class="brand-caption">Andres<br>Salattino</span>
+      </a>
+      <div class="header-controls">
+        <nav class="desktop-nav" data-i18n-aria="menu.toggle" aria-label="Navigation menu">
+          <a href="index.html"><span data-i18n="nav.home">Home</span></a
+          ><a href="about.html"><span data-i18n="nav.about">About me</span></a
+          ><a href="projects.html" aria-current="page"
             ><span data-i18n="nav.projects">Projects</span></a
-          >
-          <a href="contact.html" class="hover:text-blue-500 "
-            ><span data-i18n="nav.contact">Contact me</span></a
-          >
-          <a href="education.html" class="hover:text-blue-500 "
-            ><span data-i18n="nav.education">Education</span></a
-          >
+          ><a href="education.html"><span data-i18n="nav.education">Education</span></a
+          ><a href="contact.html"><span data-i18n="nav.contact">Contact me</span></a>
         </nav>
-        <div class="flex flex-col gap-1">
-          <label for="language-select" class="text-xs"
-            ><span data-i18n="language.label">Language</span></label
-          >
-          <select
-            id="language-select"
-            class="rounded-md border border-gray-400 bg-white px-2 py-1 text-sm text-gray-900 dark:bg-zinc-900 dark:text-white"
-          >
-            <option value="en" lang="en">English</option>
-            <option value="es" lang="es">Español</option>
+        <div class="language-control">
+          <label for="language-select" data-i18n="language.label">Language</label>
+          <select id="language-select">
+            <option value="en" lang="en">EN</option>
+            <option value="es" lang="es">ES</option>
           </select>
         </div>
         <button
           id="theme-toggle"
           type="button"
+          class="theme-toggle"
           data-i18n-aria="theme.toggle"
-          aria-label="Toggle dark mode"
+          aria-label="Switch between Piltover and Zaun"
           aria-pressed="false"
-          class="p-2 rounded-md"
         >
-          <svg width="28" height="28" aria-hidden="true">
+          <svg width="18" height="18" aria-hidden="true">
             <use href="assets/sprites.svg#sun"></use>
           </svg>
+          <span class="theme-name--light" aria-hidden="true">Piltover</span
+          ><span class="theme-name--dark" aria-hidden="true">Zaun</span>
         </button>
         <button
           id="menu-toggle"
           type="button"
+          class="menu-toggle"
           data-i18n-aria="menu.toggle"
           aria-label="Navigation menu"
           aria-controls="mobile-menu"
           aria-expanded="false"
-          class="lg:hidden p-2 rounded-md"
         >
-          <svg width="28" height="28" aria-hidden="true">
+          <svg width="24" height="24" aria-hidden="true">
             <use href="assets/sprites.svg#icono-nav"></use>
           </svg>
         </button>
       </div>
     </header>
-    <nav
-      id="mobile-menu"
-      hidden
-      class="lg:hidden bg-zinc-200 dark:bg-zinc-800 text-center font-semibold p-4"
-    >
-      <a href="about.html" class="hover:text-blue-500 block py-2"
-        ><span data-i18n="nav.about">About me</span></a
-      >
-      <a href="projects.html" aria-current="page" class="hover:text-blue-500 block py-2"
-        ><span data-i18n="nav.projects">Projects</span></a
-      >
-      <a href="contact.html" class="hover:text-blue-500 block py-2"
-        ><span data-i18n="nav.contact">Contact me</span></a
-      >
-      <a href="education.html" class="hover:text-blue-500 block py-2"
-        ><span data-i18n="nav.education">Education</span></a
-      >
+    <nav id="mobile-menu" hidden data-i18n-aria="menu.toggle" aria-label="Navigation menu">
+      <a href="index.html"><span data-i18n="nav.home">Home</span></a
+      ><a href="about.html"><span data-i18n="nav.about">About me</span></a
+      ><a href="projects.html" aria-current="page"><span data-i18n="nav.projects">Projects</span></a
+      ><a href="education.html"><span data-i18n="nav.education">Education</span></a
+      ><a href="contact.html"><span data-i18n="nav.contact">Contact me</span></a>
     </nav>
-    <main id="main-content" class="flex-1 w-full max-w-6xl mx-auto px-6 py-12 text-center">
-      <h1 class="text-4xl md:text-5xl font-bold mb-6 text-blue-600 dark:text-blue-400">
+    <main id="main-content" class="projects-main">
+      <p class="eyebrow" data-i18n="projects.eyebrow">Selected work / Built for the real world</p>
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">
         <span data-i18n="nav.projects">Projects</span>
       </h1>
-      <p class="mb-10 text-lg text-gray-600 dark:text-gray-300">
+      <p class="mb-10 text-lg">
         <span data-i18n="projects.intro">Here are some of the projects I have worked on.</span>
       </p>
       <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <article
-          class="border rounded-xl p-6 bg-white shadow-md dark:bg-zinc-800 dark:border-zinc-700 flex flex-col text-left"
-        >
+        <article class="border rounded-xl p-6 bg-white shadow-md flex flex-col text-left">
           <h2 class="text-xl font-bold mb-4">Rinos Turismo</h2>
-          <p class="text-sm text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+          <p class="text-sm mb-6 leading-relaxed">
             <span data-i18n="projects.rinos"
               >Tourism website for exploring destinations, travel packages, and services through a
               responsive interface. It includes an administration panel to manage packages, featured
@@ -165,14 +146,12 @@
             ><span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">Tailwind CSS</span
             ><span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">Supabase</span>
           </div>
-          <div
-            class="flex flex-wrap gap-4 mt-auto text-blue-600 dark:text-blue-400 text-sm font-semibold"
-          >
+          <div class="flex flex-wrap gap-4 mt-auto text-sm font-semibold">
             <a
               href="https://rino-web-nine.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 hover:underline"
+              class="arcane-button"
               ><svg width="20" height="20" aria-hidden="true">
                 <use href="assets/sprites.svg#rocket"></use>
               </svg><span data-i18n="projects.visit">Visit website</span></a
@@ -181,18 +160,16 @@
               href="https://github.com/andressalattino/RinoWeb"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 hover:underline"
+              class="arcane-button"
               ><svg width="20" height="20" aria-hidden="true">
                 <use href="assets/sprites.svg#github"></use>
               </svg><span data-i18n="projects.code">View code</span></a
             >
           </div>
         </article>
-        <article
-          class="border rounded-xl p-6 bg-white shadow-md dark:bg-zinc-800 dark:border-zinc-700 flex flex-col text-left"
-        >
+        <article class="border rounded-xl p-6 bg-white shadow-md flex flex-col text-left">
           <h2 class="text-xl font-bold mb-4">Earplugs MDZ</h2>
-          <p class="text-sm text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+          <p class="text-sm mb-6 leading-relaxed">
             <span data-i18n="projects.earplugs"
               >Product showcase and catalog for Earplugs MDZ. Its administration panel lets the
               owner update images, add products, adjust prices, and review key website statistics.
@@ -210,14 +187,12 @@
             ><span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">Supabase</span
             ><span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">Vercel</span>
           </div>
-          <div
-            class="flex flex-wrap gap-4 mt-auto text-blue-600 dark:text-blue-400 text-sm font-semibold"
-          >
+          <div class="flex flex-wrap gap-4 mt-auto text-sm font-semibold">
             <a
               href="https://earplugs-mdz.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 hover:underline"
+              class="arcane-button"
               ><svg width="20" height="20" aria-hidden="true">
                 <use href="assets/sprites.svg#rocket"></use>
               </svg><span data-i18n="projects.visit">Visit website</span></a
@@ -226,18 +201,16 @@
               href="https://github.com/andressalattino/EarplugsMdz"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 hover:underline"
+              class="arcane-button"
               ><svg width="20" height="20" aria-hidden="true">
                 <use href="assets/sprites.svg#github"></use>
               </svg><span data-i18n="projects.code">View code</span></a
             >
           </div>
         </article>
-        <article
-          class="border rounded-xl p-6 bg-white shadow-md dark:bg-zinc-800 dark:border-zinc-700 flex flex-col text-left"
-        >
+        <article class="border rounded-xl p-6 bg-white shadow-md flex flex-col text-left">
           <h2 class="text-xl font-bold mb-4">STG Viajes y Turismo</h2>
-          <div class="text-sm text-gray-600 dark:text-gray-300 mb-6 leading-relaxed space-y-3">
+          <div class="text-sm mb-6 leading-relaxed space-y-3">
             <p data-i18n="projects.stg">
               Tourism platform with a trip catalog, PDF itineraries, photo gallery, testimonials,
               and WhatsApp inquiries.
@@ -259,14 +232,12 @@
               >Biome (linter)</span
             >
           </div>
-          <div
-            class="flex flex-wrap gap-4 mt-auto text-blue-600 dark:text-blue-400 text-sm font-semibold"
-          >
+          <div class="flex flex-wrap gap-4 mt-auto text-sm font-semibold">
             <a
               href="https://stg-turismo.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 hover:underline"
+              class="arcane-button"
               ><svg width="20" height="20" aria-hidden="true">
                 <use href="assets/sprites.svg#rocket"></use>
               </svg><span data-i18n="projects.visit">Visit website</span></a
@@ -275,16 +246,14 @@
               href="https://github.com/andressalattino/STG"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 hover:underline"
+              class="arcane-button"
               ><svg width="20" height="20" aria-hidden="true">
                 <use href="assets/sprites.svg#github"></use>
               </svg><span data-i18n="projects.code">View code</span></a
             >
           </div>
         </article>
-        <article
-          class="border rounded-xl p-6 bg-white shadow-md dark:bg-zinc-800 dark:border-zinc-700 flex flex-col text-left"
-        >
+        <article class="border rounded-xl p-6 bg-white shadow-md flex flex-col text-left">
           <h2 class="text-xl font-bold mb-4">Salamone Bazar</h2>
           <div class="flex flex-wrap gap-2 mb-4 text-xs font-semibold">
             <span
@@ -302,18 +271,13 @@
               >Team of 2 developers</span
             >
           </div>
-          <p
-            class="text-sm text-gray-600 dark:text-gray-300 mb-6 leading-relaxed"
-            data-i18n="projects.salamone"
-          >
+          <p class="text-sm mb-6 leading-relaxed" data-i18n="projects.salamone">
             Website for Bazar Salamone, developed together with another programmer. It includes a
             home goods catalog, offers and new arrivals, user accounts, and an administration panel
             to manage the catalog.
           </p>
           <h3 class="text-sm font-semibold mb-2" data-i18n="projects.features">Features</h3>
-          <ul
-            class="list-disc pl-5 space-y-2 text-sm text-gray-600 dark:text-gray-300 mb-6 leading-relaxed"
-          >
+          <ul class="list-disc pl-5 space-y-2 text-sm mb-6 leading-relaxed">
             <li data-i18n="projects.salamoneCatalog">
               Catalog organized by category, with sorting by name or price and pagination.
             </li>
@@ -354,12 +318,12 @@
               href="https://salamone-web-stg.nahueldevelop.workers.dev/"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:underline"
+              class="arcane-button"
               ><svg width="20" height="20" aria-hidden="true">
                 <use href="assets/sprites.svg#rocket"></use>
               </svg><span data-i18n="projects.visit">Visit website</span></a
             >
-            <span class="inline-flex items-center gap-2 text-gray-600 dark:text-gray-300">
+            <span class="inline-flex items-center gap-2">
               <svg width="20" height="20" aria-hidden="true">
                 <use href="assets/sprites.svg#github"></use>
               </svg>
@@ -368,9 +332,16 @@
           </div>
         </article>
       </div>
-      <p class="mt-8 text-sm text-gray-600 dark:text-gray-300">
+      <p class="mt-8 text-sm">
         <span data-i18n="projects.soon">More projects coming soon.</span>
       </p>
     </main>
+    <footer class="site-footer">
+      <span>Andres Salattino · Frontend Developer</span>
+      <span class="world-indicator"
+        ><span class="theme-name--light">Piltover / City of Progress</span
+        ><span class="theme-name--dark">Zaun / The Undercity</span></span
+      >
+    </footer>
   </body>
 </html>

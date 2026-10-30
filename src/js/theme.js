@@ -1,3 +1,4 @@
+import { renderArcaneTheme } from "./arcane.js";
 import { readPreference, savePreference } from "./preferences.js";
 export function initTheme() {
   const button = document.getElementById("theme-toggle");
@@ -8,6 +9,7 @@ export function initTheme() {
     button
       ?.querySelector("use")
       ?.setAttribute("href", `assets/sprites.svg#${dark ? "moon" : "sun"}`);
+    renderArcaneTheme(dark);
   }
   applyTheme(readPreference("tema") === "dark");
   button?.addEventListener("click", () => {
