@@ -35,8 +35,8 @@ tema activo, conservando los botones y enlaces nativos y las preferencias existe
 - Inicio: cartel de The Last Drop como imagen principal, arma de Jinx pequeña abajo
   a la derecha y grafitis en Zaun; nubes pintadas y dos dirigibles en Piltover.
 - Sobre mí: avatar urbano o elegante, dentro del mismo espacio de 256 × 223 px.
-- Educación: Ekko o Heimerdinger.
-- Tecnologías, dentro de Educación: Viktor con dos seguidores tenues, o Jayce sin seguidores.
+- Educación: Heimerdinger en modo claro.
+- Tecnologías, dentro de Educación: Viktor con dos seguidores tenues en modo oscuro.
 - Contacto: Jinx en oscuro y Vi en claro, dentro del mismo espacio de 180 × 200 px.
 
 Los recursos están optimizados en `assets/arcane/`. Inicio y Educación

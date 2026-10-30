@@ -138,7 +138,9 @@ export function renderArcaneTheme(dark) {
 
   for (const character of document.querySelectorAll("[data-theme-character]")) {
     const file = dark ? character.dataset.dark : character.dataset.light;
+    character.hidden = !file;
     if (file) character.setAttribute("src", `${assetRoot}${file}.webp`);
+    else character.removeAttribute("src");
   }
 
   if (hero) {
@@ -174,14 +176,15 @@ export function renderArcaneTheme(dark) {
   }
 
   if (technologies) {
-    const scene = decoration(dark ? "technology-art technology-art--zaun" : "technology-art");
-    if (dark) scene.append(ViktorFollowers());
-    scene.append(
-      sceneImage(dark ? "viktor" : "jayce", "technology-character", {
-        width: 640,
-        height: 960,
-      }),
-    );
-    technologies.replaceChildren(scene);
+    if (dark) {
+      const scene = decoration("technology-art technology-art--zaun");
+      scene.append(
+        ViktorFollowers(),
+        sceneImage("viktor", "technology-character", { width: 640, height: 960 }),
+      );
+      technologies.replaceChildren(scene);
+    } else {
+      technologies.replaceChildren();
+    }
   }
 }

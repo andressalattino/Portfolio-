@@ -870,8 +870,8 @@ html.dark .about-avatar::before {
   background: radial-gradient(ellipse, rgb(213 182 117 / 30%), transparent 70%);
   content: "";
 }
-html.dark .education-character::before {
-  background: radial-gradient(ellipse, rgb(64 123 52 / 20%), transparent 70%);
+html.dark .education-character {
+  visibility: hidden;
 }
 .technologies {
   position: relative;
